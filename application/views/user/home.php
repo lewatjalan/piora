@@ -7,7 +7,7 @@
 <meta name="description" content="Health medical template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/bootstrap4/bootstrap.min.css">
-<link href="assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url();?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
@@ -28,8 +28,8 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
-				<li class="menu_item"><a href="index.html">Home</a></li>
-				<li class="menu_item"><a href="#">Artikel</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
 				<li class="menu_item"><a href="#">Obat</a></li>
 				<li class="menu_item"><a href="#">Keluhan</a></li>
 				<li class="menu_item"><a href="#">Contact</a></li>
@@ -62,7 +62,7 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="#">PIORA<span>+</span></a>	
+										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
 									</div>
 									<!--
 									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
@@ -93,8 +93,8 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="index.html">Home</a></li>
-													<li><a href="#">Artikel</a></li>
+													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
 													<li><a href="#">Obat</a></li>
 													<li><a href="#">Keluhan</a></li>
 												</ul>
@@ -337,7 +337,7 @@
 					<div class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
-								<a href="#">PIORA<span>+</span></a>	
+								<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
 							</div>
 							<div class="footer_about_text">Pusat Informasi Obat ITERA.</div>
 							<div class="footer_social">
