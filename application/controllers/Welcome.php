@@ -29,4 +29,10 @@ class Welcome extends CI_Controller {
 		$this->load->view('user/artikel');
 
 	}
+	
+	public function faq()
+	{
+		$this->load->view('user/faq');
+
+	}
 }
