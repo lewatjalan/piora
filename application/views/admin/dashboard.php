@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../img/ArdiantaPargo.png">
+    <link rel="icon" href="<?php echo base_url();?>/assets/images/Logo PIO.png">
 
     <title>Administrator PIORA</title>
 

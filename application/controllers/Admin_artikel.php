@@ -23,4 +23,8 @@ class Admin_artikel extends CI_Controller {
 
 	}
 
+	public function add(){
+		$this->load->view('admin/artikel/add');
+
+	}
 }
