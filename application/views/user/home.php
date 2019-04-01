@@ -97,6 +97,7 @@
 													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
 													<li><a href="#">Obat</a></li>
 													<li><a href="#">Keluhan</a></li>
+													<li><a href="<?php echo site_url('Welcome/faq'); ?>">FAQ</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
