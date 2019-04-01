@@ -12,7 +12,7 @@ class Admin extends CI_Controller {
 		if($this->session->userdata('!is_logged_in')){
 			redirect('admin/index');
         }else{
-        	$this->load->view('admin/login');	
+        	$this->load->view('admin/dashboard');	
         }
 	}
 

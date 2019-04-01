@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Aadmin_artikel extends CI_Controller {
+class Admin_artikel extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,13 +17,10 @@ class Aadmin_artikel extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	function index()
+	public function index()
 	{
-		if($this->session->userdata('!is_logged_in')){
-			redirect('admin/products');
-        }else{
-        	$this->load->view('admin/artikel/list');	
-        }
+		$this->load->view('admin/artikel/list');
+
 	}
 
 }
