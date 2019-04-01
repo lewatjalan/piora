@@ -29,6 +29,7 @@
 			<ul>
 				<li class="menu_item"><a href="index.html">Infromasi Obat</a></li>
 				<li class="menu_item"><a href="news.html">Artikel</a></li>
+				<li class="menu_item"><a href="#">Obat</a></li>
 				<li class="menu_item"><a href="#">Keluhan</a></li>
 				<li class="menu_item"><a href="contact.html">FAQ</a></li>
 			</ul>
@@ -82,10 +83,11 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li><a href="index.html">Informasi Obat</a></li>
-													<li class="active"><a href="artikel.html">Artikel</a></li>
-													<li><a href="keluhan.html">Keluhan</a></li>
-													<li><a href="faq.html">FAQ</a></li>
+													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+													<li><a href="#">Obat</a></li>
+													<li><a href="#">Keluhan</a></li>
+													<li><a href="#">FAQ</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
@@ -174,11 +176,7 @@
 				</div>
 
 				
-						
-								
-
-								
-
+				
 								
 								</div>
 
