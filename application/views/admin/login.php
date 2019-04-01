@@ -61,6 +61,11 @@
 							Login
 						</button>
 					</div>
+					<div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							
+						</a>
+					</div>
 				</form>
 			</div>
 		</div>
