@@ -34,26 +34,72 @@
               <?php include 'template/sidebar.php'; ?>
           </aside>
 
+          <section id="konten">
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <h2 class="sub-header">Semua Artikel <a href="<?php echo base_url();?>admin/artikel/add" class="btn btn-success pull-right"><i class="fa fa-plus-circle fa-lg"></i> Artikel Baru</a></h2>
-  <div class="table-responsive">
+  <h1 class="page-header">Halo <?php echo $this->session->userdata("nama"); ?></h1>
 
-    <table class="table table-striped">
+  <div class="container top">
+
+<ul class="breadcrumb">
+  <li>
+    <a href="<?php echo site_url("admin"); ?>">
+      <?php echo ucfirst($this->uri->segment(1));?>
+    </a> 
+    <span class="divider">/</span>
+  </li>
+  <li class="active">
+    <?php echo ucfirst($this->uri->segment(2));?>
+  </li>
+</ul>
+
+<div class="page-header users-header">
+  <h2>
+    <?php echo ucfirst($this->uri->segment(2));?> 
+    <a  href="<?php echo site_url("admin").'/'.$this->uri->segment(2); ?>/add" class="btn btn-success">Add a new</a>
+  </h2>
+</div>
+
+<div class="row">
+  <div class="span12 columns">
+
+    <table class="table table-striped table-bordered table-condensed">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Judul</th>
-          <th>Penulis</th>
-          <th>Tanggal</th>
+          <th class="header">#</th>
+          <th class="yellow header headerSortDown">Nama Obat</th>
+          <th class="green header">Merek Dagang</th>
+          <th class="red header">Penulis</th>
+          <th class="red header">Actions</th>
         </tr>
       </thead>
       <tbody>
-         
+        <?php
+       // foreach($products as $row)
+        {
+         // echo '<tr>';
+         // echo '<td>'.$row['id'].'</td>';
+         // echo '<td>'.$row['description'].'</td>';
+         // echo '<td>'.$row['stock'].'</td>';
+         // echo '<td>'.$row['cost_price'].'</td>';
+          // echo '<td>'.$row['sell_price'].'</td>';
+        //  echo '<td>'.$row['manufacture_name'].'</td>';
+          echo '<td class="crud-actions">
+          </td>';
+          echo '</tr>';
+        }
+        ?>      
       </tbody>
     </table>
 
-  </div>
+    <?php echo '<div class="pagination">'.$this->pagination->create_links().'</div>'; ?>
+
 </div>
+</div>
+
+          </section>
+
+      </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

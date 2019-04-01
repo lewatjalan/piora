@@ -60,7 +60,7 @@
 <?php echo form_open_multipart('posts/create'); ?>
 <div class="col-sm-9">
 
-  <h2>Buat Artikel</h2>
+  <h2>Update Artikel</h2>
     <form action="http://localhost/pabw.go.id/posts/create" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
     <label>Title</label>
@@ -81,7 +81,7 @@
     <label>Upload Image</label>
     <input type="file" name="userfile" size="20" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
   </div>
-  <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-paper-plane"></i> Post Berita</button>
+  <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-paper-plane"></i> Simpan Berita</button>
 </form>   </div>
     <script>
                 CKEDITOR.replace( 'editor1' );
