@@ -235,7 +235,7 @@
 							<div class="accordions">
 
 								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center deactive"><div>bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
+									<div class="accordion d-flex flex-row align-items-center deactive"><div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
 									<div class="accordion_panel">
 										<div>
 											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
@@ -244,7 +244,7 @@
 								</div>
 
 								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center active"><div>bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
+									<div class="accordion d-flex flex-row align-items-center deactive"><div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
 									<div class="accordion_panel">
 										<div>
 											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
@@ -253,7 +253,7 @@
 								</div>
 
 								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center active"><div>bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
+									<div class="accordion d-flex flex-row align-items-center deactive"><div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
 									<div class="accordion_panel">
 										<div>
 											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
