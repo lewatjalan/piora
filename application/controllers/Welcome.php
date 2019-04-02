@@ -21,5 +21,24 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('user/home');
+
+	}
+	
+	public function artikel()
+	{
+		$this->load->view('user/artikel');
+
+	}
+	
+	public function obat()
+	{
+		$this->load->view('user/obat');
+
+	}
+	
+	public function faq()
+	{
+		$this->load->view('user/faq');
+
 	}
 }
