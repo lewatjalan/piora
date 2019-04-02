@@ -378,7 +378,7 @@ section
 .logo a
 {
 	line-height: 0.75;
-	color: blue;
+	color:  #205faf;
 	font-size: 24px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -387,7 +387,7 @@ section
 {
 	position: relative;
 	font-size: 36px;
-	color: blue;
+	color: #205faf;
 	line-height: 0.75;
 	vertical-align: text-top;
 }
@@ -465,7 +465,7 @@ section
 .header_nav_container
 {
 	z-index: 1;
-	background: blue;
+	background:  #205faf;
 }
 .header_nav_content
 {
