@@ -77,7 +77,7 @@
 												<ul class="d-flex flex-row align-items-center justify-content-start">
 													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
-													<li><a href="#">Obat</a></li>
+													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 													<li><a href="#">Keluhan</a></li>
 													<li><a href="<?php echo site_url('Welcome/faq'); ?>">FAQ</a></li>
 												</ul>
@@ -131,10 +131,7 @@
 									</div>
 									<div class="accordion_panel">
 										<div>
-											<p> <a herf="home.php">Acetosal <br> </a>
-												<a herf="Allopurinol.php"> Allopurinol <br> </a>
-												<a herf="As.Mefenamat.php"> As.Mefenamat  <br> </a>
-												As. Valporat<br>
+											<p>SSSSSSSSSSSSSSSSSSSSS
 											</p>
 										</div>
 									</div>
