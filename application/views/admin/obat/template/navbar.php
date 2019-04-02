@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="admin" ><i class="fa fa-wrench"></i> <p class="bg-primary text-white"  >DASHBOARD</p> </a>
+      <a class="navbar-brand" href="<?php echo base_url();?>admin" ><i class="fa fa-wrench"></i> <p class="bg-primary text-white"  >DASHBOARD</p> </a>
     </div>
     <div class="navbar-collapse collapse"  >
 

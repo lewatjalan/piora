@@ -62,14 +62,14 @@ $route['admin/artikel/update/(:any)'] = 'admin_artikel/update/$1';
 $route['admin/artikel/delete/(:any)'] = 'admin_artikel/delete/$1';
 $route['admin/artikel/(:any)'] = 'admin_artikel/index/$1'; //$1 = page number
 
-$route['admin/obat'] = 'admin_artikel/index';
-$route['admin/obat/add'] = 'admin_artikel/add';
-$route['admin/obat/update'] = 'admin_artikel/update';
-$route['admin/obat/update/(:any)'] = 'admin_artikel/update/$1';
-$route['admin/obat/delete/(:any)'] = 'admin_artikel/delete/$1';
-$route['admin/obat/(:any)'] = 'admin_artikel/index/$1'; //$1 = page number
+$route['admin/obat'] = 'admin_obat/index';
+$route['admin/obat/add'] = 'admin_obat/add';
+$route['admin/obat/update'] = 'admin_obat/update';
+$route['admin/obat/update/(:any)'] = 'admin_obat/update/$1';
+$route['admin/obat/delete/(:any)'] = 'admin_obat/delete/$1';
+$route['admin/obat/(:any)'] = 'admin_obat/index/$1'; //$1 = page number
 
-$route['admin/info'] = 'admin_artikel/index';
+$route['admin/info'] = 'info_admin/index';
 
 $route['default_controller'] = 'Welcome';
 
