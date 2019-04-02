@@ -69,6 +69,8 @@ $route['admin/obat/update/(:any)'] = 'admin_artikel/update/$1';
 $route['admin/obat/delete/(:any)'] = 'admin_artikel/delete/$1';
 $route['admin/obat/(:any)'] = 'admin_artikel/index/$1'; //$1 = page number
 
+$route['admin/info'] = 'admin_artikel/index';
+
 $route['default_controller'] = 'Welcome';
 
 $route['artikel'] = 'Welcome/artikel';
