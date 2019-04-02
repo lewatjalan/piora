@@ -30,7 +30,7 @@
 			<ul>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
-				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+				<li class="menu_item"><a href="#">Obat</a></li>
 				<li class="menu_item"><a href="#">Keluhan</a></li>
 				<li class="menu_item"><a href="#">Contact</a></li>
 			</ul>
@@ -95,9 +95,8 @@
 												<ul class="d-flex flex-row align-items-center justify-content-start">
 													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
-													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+													<li><a href="#">Obat</a></li>
 													<li><a href="#">Keluhan</a></li>
-													<li><a href="<?php echo site_url('Welcome/faq'); ?>">FAQ</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
@@ -131,92 +130,10 @@
 		</div>
 	</div>
 
-	<!-- Info Boxes -->
+	
 
-	<div class="info">
-		<div class="container">
-			<div class="row row-eq-height">
+			
 
-				<!-- Info Box -->
-				<div class="col-lg-4 info_box_col">
-					<div class="info_box">
-						<div class="info_image"><img src="<?php echo base_url();?>/assets/images/info_1.jpg" alt=""></div>
-						<div class="info_content">
-							<div class="info_title">Free Consultations</div>
-							<div class="info_text">Arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus mollis.</div>
-							<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Info Box -->
-				<div class="col-lg-4 info_box_col">
-					<div class="info_box">
-						<div class="info_image"><img src="<?php echo base_url();?>/assets/images/info_2.jpg" alt=""></div>
-						<div class="info_content">
-							<div class="info_title">Emergency Care</div>
-							<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
-							<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Info Box -->
-				<div class="col-lg-4 info_box_col">
-					<div class="info_box">
-						<div class="info_image"><img src="<?php echo base_url();?>/assets/images/info_1.jpg" alt=""></div>
-						<div class="info_content">
-							<div class="info_title">Emergency Care</div>
-							<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
-							<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Info Form -->
-				<!--
-				<div class="col-lg-4 info_box_col">
-					<div class="info_form_container">
-						<div class="info_form_title">Make an Appointment</div>
-						<form action="#" class="info_form" id="info_form">
-							<select name="info_form_dep" id="info_form_dep" class="info_form_dep info_input info_select">
-								<option>Department</option>
-								<option>Department</option>
-								<option>Department</option>
-							</select>
-							<select name="info_form_doc" id="info_form_doc" class="info_form_doc info_input info_select">
-								<option>Doctor</option>
-								<option>Doctor</option>
-								<option>Doctor</option>
-							</select>
-							<input type="text" class="info_input" placeholder="Name" required="required">
-							<input type="text" class="info_input" placeholder="Phone No">
-							<button class="info_form_button">make an appointment</button>
-						</form>
-					</div>
-				</div> -->
-			</div>
-		</div>
-	</div>
-
-	<!-- CTA -->
-
-	<div class="cta">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url();?>/assets/images/cta_1.jpg" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="cta_container d-flex flex-xl-row flex-column align-items-xl-start align-items-center justify-content-xl-start justify-content-center">
-						<div class="cta_content text-xl-left text-center">
-							<div class="cta_title">Kenali gejala sakit anda di sini.</div>
-							<div class="cta_subtitle">priksakan gejala-gejala penyakit anda.</div>
-						</div>
-						<div class="button cta_button ml-xl-auto"><a href="#"><span>Keluhan</span><span>call now</span></a></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 
 
@@ -227,7 +144,7 @@
 			<div class="row">
 
 				<!-- FAQ -->
-				<div class="col-lg-7">
+				<div class="col-lg-12">
 					<div class="faq">
 						<div class="faq_title">FAQ</div>
 						
@@ -235,7 +152,7 @@
 							<div class="accordions">
 
 								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center deactive"><div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
+									<div class="accordion d-flex flex-row align-items-center active"><div>bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
 									<div class="accordion_panel">
 										<div>
 											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
@@ -244,7 +161,7 @@
 								</div>
 
 								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center deactive"><div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
+									<div class="accordion d-flex flex-row align-items-center active"><div>bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
 									<div class="accordion_panel">
 										<div>
 											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
@@ -253,7 +170,7 @@
 								</div>
 
 								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center deactive"><div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
+									<div class="accordion d-flex flex-row align-items-center active"><div>bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
 									<div class="accordion_panel">
 										<div>
 											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
@@ -266,61 +183,7 @@
 					</div>
 				</div>
 
-				<!-- Latest News -->
-				<div class="col-lg-5">
-					<div class="news">
-						<div class="news_title">Latest News</div>
-						<div class="news_subtitle">read all about it</div>
-						<div class="news_container">
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="<?php echo base_url();?>/assets/images/latest_1.jpg" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">A simple blog post</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="<?php echo base_url();?>/assets/images/latest_2.jpg" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">A new way to see things in medicine</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="<?php echo base_url();?>/assets/images/latest_3.jpg" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">Why is Pharma industry so big?</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
+		
 
 			</div>
 		</div>
