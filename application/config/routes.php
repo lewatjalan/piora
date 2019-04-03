@@ -70,6 +70,7 @@ $route['admin/obat/delete/(:any)'] = 'admin_obat/delete/$1';
 $route['admin/obat/(:any)'] = 'admin_obat/index/$1'; //$1 = page number
 
 $route['admin/info'] = 'info_admin/index';
+$route['admin/info/add'] = 'info_admin/add';
 
 $route['default_controller'] = 'Welcome';
 

@@ -19,7 +19,7 @@
     <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
 
     <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
   </head>
 
@@ -81,7 +81,7 @@
     <label>Upload Image</label>
     <input type="file" name="userfile" size="20" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
   </div>
-  <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-paper-plane"></i> Simpan Berita</button>
+  <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan Berita</button>
 </form>   </div>
     <script>
                 CKEDITOR.replace( 'editor1' );

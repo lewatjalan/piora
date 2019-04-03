@@ -19,7 +19,7 @@
     <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
 
     <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
   </head>
 
@@ -36,8 +36,6 @@
 
           <section id="konten">
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <h1 class="page-header">Halo <?php echo $this->session->userdata("nama"); ?></h1>
-
   <div class="container top">
 
 <ul class="breadcrumb">
@@ -100,5 +98,6 @@
     <script src="<?php echo base_url();?>/assets/bootstrap/js/jquery.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/holder.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/ckeditor/ckeditor.js"></script>
   </body>
 </html>

@@ -19,7 +19,7 @@
     <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
 
     <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
   </head>
 
@@ -45,10 +45,15 @@
           <th>Judul</th>
           <th>Penulis</th>
           <th>Tanggal</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
-         
+      <th>1</th>
+          <th>Ini Judul</th>
+          <th>Yang Nulis Penulis</th>
+          <th>Tanggal Buatnya</th>
+          <th>Mau Di kasih Aksi apa </th>
       </tbody>
     </table>
 

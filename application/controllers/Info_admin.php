@@ -24,7 +24,7 @@ class Info_admin extends CI_Controller {
 	}
 
 	public function add(){
-		$this->load->view('admin/obat/add');
+		$this->load->view('admin/info/add');
 
 	}
 }

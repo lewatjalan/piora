@@ -19,7 +19,7 @@
     <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
 
     <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
   </head>
 
@@ -47,7 +47,7 @@
           <th>Penulis</th>
           <th>Aksi</th>
         </tr>
-      </thead>,
+      </thead>
       <tbody>
          
       </tbody>
