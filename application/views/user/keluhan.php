@@ -31,9 +31,9 @@
 			<ul>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
-				<li class="menu_item"><a href="#">Obat</a></li>
-				<li class="menu_item"><a href="#">Keluhan</a></li>
-				<li class="menu_item"><a href="#">Contact</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -80,11 +80,11 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
-													<li><a href="#">Obat</a></li>
-													<li><a href="#">Keluhan</a></li>
-													<li><a href="#">FAQ</a></li>
+													<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+													<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+													<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+													<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+													<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
