@@ -31,8 +31,8 @@
 				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-				<li class="menu_item"><a href="#">Keluhan</a></li>
-				<li class="menu_item"><a href="#">Contact</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -64,20 +64,6 @@
 									<div class="logo">
 										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
 									</div>
-									<!--
-									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
-										<div class="header_top_nav">
-											<ul class="d-flex flex-row align-items-center justify-content-start">
-												<li><a href="#">Help Desk</a></li>
-												<li><a href="#">Emergency Services</a></li>
-												<li><a href="#">Appointment</a></li>
-											</ul>
-										</div>
-										<div class="header_top_phone">
-											<i class="fa fa-phone" aria-hidden="true"></i>
-											<span>+34 586 778 8892</span>
-										</div>
-									</div> -->
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
 							</div>
@@ -96,8 +82,8 @@
 													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
 													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
-													<li><a href="#">Keluhan</a></li>
-													<li><a href="<?php echo site_url('Welcome/faq'); ?>">FAQ</a></li>
+													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
@@ -123,7 +109,6 @@
 						<div class="home_content">
 							<div class="home_title">Institut Teknologi Sumatera</div>
 							<div class="home_text">Pusat Informasi Obat ITERA.</div>
-							<!-- <div class="button home_button"><a href="#"><span>read more</span><span>read more</span></a></div> -->
 						</div>
 					</div>
 				</div>
@@ -173,28 +158,6 @@
 					</div>
 				</div>
 
-				<!-- Info Form -->
-				<!--
-				<div class="col-lg-4 info_box_col">
-					<div class="info_form_container">
-						<div class="info_form_title">Make an Appointment</div>
-						<form action="#" class="info_form" id="info_form">
-							<select name="info_form_dep" id="info_form_dep" class="info_form_dep info_input info_select">
-								<option>Department</option>
-								<option>Department</option>
-								<option>Department</option>
-							</select>
-							<select name="info_form_doc" id="info_form_doc" class="info_form_doc info_input info_select">
-								<option>Doctor</option>
-								<option>Doctor</option>
-								<option>Doctor</option>
-							</select>
-							<input type="text" class="info_input" placeholder="Name" required="required">
-							<input type="text" class="info_input" placeholder="Phone No">
-							<button class="info_form_button">make an appointment</button>
-						</form>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</div>
