@@ -1,14 +1,9 @@
 <?php 
  
-class Admin extends CI_Controller{
+class Login extends CI_Controller{
  
-	function index()
-	{
-		if($this->session->userdata('status') != "login"){
-			$this->load->view('admin/login');
-        }else{
-        	$this->load->view('admin/dashboard');	
-        }
+	function index(){
+		$this->load->view('admin/login');
 	}
  	
 	// Register user
@@ -43,7 +38,7 @@ class Admin extends CI_Controller{
 			'username' => $username,
 			'password' => md5($password)
 			);
-		$user_id = $this->admin_model->cek_login("admin",$where)->num_rows();
+		$user_id = $this->login_model->cek_login("admin",$where)->num_rows();
 		if($user_id > 0){
  
 			$data_session = array(
@@ -54,7 +49,7 @@ class Admin extends CI_Controller{
  
 			$this->session->set_userdata($data_session);
  
-			redirect(base_url("admin/dashboard"));
+			redirect(base_url("admin"));
 		}else{
 			$this->session->set_flashdata('login_failed', 'Login Gagal ! Silahkan Coba Kembali');
 			$this->load->view('admin/login');

@@ -50,10 +50,7 @@
       </thead>
       <tbody>
       <th>1</th>
-          <th>Ini Judul</th>
-          <th>Yang Nulis Penulis</th>
-          <th>Tanggal Buatnya</th>
-          <th>Mau Di kasih Aksi apa </th>
+      
       </tbody>
     </table>
 
