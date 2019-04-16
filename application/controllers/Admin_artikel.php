@@ -19,7 +19,8 @@ class Admin_artikel extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('admin/artikel/list');
+		$x['data']=$this->post_model->get_all_post();
+		$this->load->view('admin/artikel/list',$x);
 
 	}
 

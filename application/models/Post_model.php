@@ -4,6 +4,11 @@
 			$this->load->database();
 		}
 
+        function get_all_post(){
+            $hsl=$this->db->query("SELECT artikel.*,DATE_FORMAT(create_at,'%d/%m/%Y')  FROM artikel ORDER BY id_artikel DESC");
+            return $hsl;
+        }
+
 		public function get_posts($slug = FALSE, $limit = FALSE, $offset = FALSE){
 			if($limit){
 				$this->db->limit($limit, $offset);
