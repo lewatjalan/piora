@@ -1,7 +1,6 @@
 <?php 
  
 class Admin extends CI_Controller{
- 
 	function index()
 	{
 		if($this->session->userdata('status') != "login"){
@@ -36,7 +35,32 @@ class Admin extends CI_Controller{
 			}
 		}
 
-	function aksi_login(){
+		function get_all_admin(){
+			$hsl=$this->db->query("SELECT * FROM admin");
+			return $hsl;	
+		}
+
+		function simpan_admin(){
+			if(!$this->session->userdata('status')){
+							redirect('admin');
+				} 
+
+			$this->form_validation->set_rules('username', 'Username', 'required');
+			$this->form_validation->set_rules('password', 'Password', 'required');
+
+			if($this->form_validation->run() === FALSE){
+					
+				$this->load->view('admin/info/add');
+					
+			} else {}
+				// Set message
+				$this->info_model->simpan_admin();
+				$this->session->set_flashdata('admin_created', 'Your akun has been created');
+				redirect('admin/info');	
+		}
+
+
+	function login(){
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 		$where = array(

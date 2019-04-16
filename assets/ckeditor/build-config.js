@@ -1,6 +1,6 @@
 ﻿/**
- * @license Copyright (c) 2003-2019, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/license
+ * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
 /**
@@ -10,13 +10,13 @@
  * If you would like to build CKEditor online again
  * (for example to upgrade), visit one the following links:
  *
- * (1) https://ckeditor.com/cke4/builder
+ * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) https://ckeditor.com/cke4/builder/8ff7b71bcccc296bcc3a4a5b82942d17
+ * (2) http://ckeditor.com/builder/843ca322d33e49a15f847ea92d689b52
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) https://ckeditor.com/cke4/builder/download/8ff7b71bcccc296bcc3a4a5b82942d17
+ * (3) http://ckeditor.com/builder/download/843ca322d33e49a15f847ea92d689b52
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -28,27 +28,25 @@ var CKBUILDER_CONFIG = {
 	skin: 'moono-lisa',
 	preset: 'standard',
 	ignore: [
-		'.DS_Store',
 		'.bender',
+		'bender.js',
+		'bender-err.log',
+		'bender-out.log',
+		'dev',
+		'.DS_Store',
 		'.editorconfig',
 		'.gitattributes',
 		'.gitignore',
+		'gruntfile.js',
 		'.idea',
 		'.jscsrc',
 		'.jshintignore',
 		'.jshintrc',
-		'.mailmap',
-		'.npm',
-		'.travis.yml',
-		'bender-err.log',
-		'bender-out.log',
-		'bender.ci.js',
-		'bender.js',
-		'dev',
-		'gruntfile.js',
 		'less',
+		'.mailmap',
 		'node_modules',
 		'package.json',
+		'README.md',
 		'tests'
 	],
 	plugins : {
@@ -83,11 +81,9 @@ var CKBUILDER_CONFIG = {
 		'stylescombo' : 1,
 		'tab' : 1,
 		'table' : 1,
-		'tableselection' : 1,
 		'tabletools' : 1,
 		'toolbar' : 1,
 		'undo' : 1,
-		'uploadimage' : 1,
 		'wsc' : 1,
 		'wysiwygarea' : 1
 	},
@@ -111,7 +107,6 @@ var CKBUILDER_CONFIG = {
 		'en-gb' : 1,
 		'eo' : 1,
 		'es' : 1,
-		'es-mx' : 1,
 		'et' : 1,
 		'eu' : 1,
 		'fa' : 1,
