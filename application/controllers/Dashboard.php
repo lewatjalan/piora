@@ -1,6 +1,8 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php
 
-class Admin_artikel extends CI_Controller {
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class DAshboard extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,13 +21,8 @@ class Admin_artikel extends CI_Controller {
 	 */
 	public function index()
 	{
-		$x['data']=$this->post_model->get_all_post();
-		$this->load->view('admin/artikel/list',$x);
+		$this->load->view('admin/dashboard');
 
 	}
 
-	public function add(){
-		$this->load->view('admin/artikel/add');
-
-	}
 }

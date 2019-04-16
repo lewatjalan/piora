@@ -49,11 +49,28 @@
         </tr>
       </thead>
       <tbody>
-      <th>1</th>
-          <th>Ini Judul</th>
-          <th>Yang Nulis Penulis</th>
-          <th>Tanggal Buatnya</th>
-          <th>Mau Di kasih Aksi apa </th>
+      <?php
+          					$no=0;
+          					foreach ($data->result_array() as $i) :
+          					   $no++;
+          					   $judul=$i['judul'];
+          					   $id_admin=$i['id_admin'];
+          					   $create_at	=$i['create_at'];
+                    ?>
+                <tr>
+                  <td><?php echo $no;?></td>
+                  <td><?php echo $judul;?></td>
+        				  <td><?php echo $id_admin;?></td>
+        				  <td><?php echo $create_at	;?></td>
+                  <td style="text-align:right;">
+                        <!-- <?php echo base_url().'admin_artikel/edit'.$id_artikel;?> -->
+                        <a class="btn" href=""><span class="fa fa-pencil"></span></a>
+                        <!-- <?php echo $id_artikel;?> -->
+                        <a class="btn" data-toggle="modal" data-target="#ModalHapus"><span class="fa fa-trash"></span></a>
+                  </td>
+                </tr>
+				<?php endforeach;?>
+      
       </tbody>
     </table>
 

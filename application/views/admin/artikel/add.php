@@ -59,20 +59,20 @@
 <div class="col-sm-9">
 
   <h2>Buat Artikel</h2>
-    <form action="http://localhost/pabw.go.id/posts/create" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+    <form action="http://localhost/piora/posts/create" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
     <label>Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
+    <input type="text" class="form-control" name="judul" placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
   </div>
   <div class="form-group">
     <label>Body</label>
-    <textarea id="editor1" class="form-control" name="body" placeholder="Add Body" rows="16" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <textarea id="ckeditor" class="form-control" name="body" placeholder="Add Body" rows="16" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
   </div>
   <div class="form-group">
     <label>Category</label>
-    <select name="category_id" class="form-control">
-              <option value="2">Herbal</option>
-              <option value="1">Technology</option>
+    <select name="kategori" class="form-control">
+              <option value="Herbal">Herbal</option>
+              <option value="">Technology</option>
           </select>
   </div>
   <div class="form-group">

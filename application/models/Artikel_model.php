@@ -19,7 +19,7 @@ class Artikel_model extends CI_Model {
     {
 		$this->db->select('*');
 		$this->db->from('artikel');
-		$this->db->where('id', $id);
+		$this->db->where('id_artikel', $id);
 		$query = $this->db->get();
 		return $query->result_array(); 
     }
