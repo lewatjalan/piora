@@ -35,18 +35,49 @@
 				<?php if($this->session->flashdata('login_failed')): ?>
                     <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
                     <?php endif; ?>
-					<form class="login100-form validate-form" role="form" action="<?php echo base_url('admin/aksi_login'); ?>" method="POST">
-                      <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" placeholder="username" name="username" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
-                      </div>
-                      <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" placeholder="password" name="password" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
-                      </div>
-                      
-                      <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-paper-plane"></i> Login</button>
-                    </form>
+										<form class="login100-form validate-form" role="form" action="<?php echo base_url('admin/auth'); ?>" method="POST">
+					<span class="login100-form-title">
+						Admin Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">
+						<input class="input100" type="text" name="username" placeholder="username">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="password" placeholder="password">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+					<div class="text-center p-t-12">
+						<span class="txt1">
+							
+						</span>
+						<a class="txt2" href="#">
+							
+						</a>
+					</div>
+
+					<div class="text-center p-t-136">
+						<a class="txt2" href="#">
+							
+							<i  aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
