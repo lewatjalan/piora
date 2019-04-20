@@ -57,18 +57,25 @@
 </div>
 
 <?php echo validation_errors(); ?>
-<?php echo form_open_multipart('posts/create'); ?>
 <div class="col-sm-9">
-
+<?php
+                      foreach ($artikel->result_array() as $data_artikel) :
+                       $id_artikel=$data_artikel['id_artikel'];
+          					   $judul=$data_artikel['judul'];
+          					   $body=$data_artikel['body'];
+          					   $kategori	=$data_artikel['kategori'];
+                       ?>
+                      <?php endforeach;?>
   <h2>Update Artikel</h2>
-    <form action="http://localhost/pabw.go.id/posts/create" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+    <form action="<?php echo base_url().'admin_artikel/update'?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
     <label>Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
+    <input type="hidden" name="kode" value="<?php echo "$id_artikel"; ?>">
+    <input type="text" class="form-control" name="judul"  placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')" value="<?php echo "$judul"; ?>"/>
   </div>
   <div class="form-group">
     <label>Body</label>
-    <textarea id="editor1" class="form-control" name="body" placeholder="Add Body" rows="16" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <textarea id="ckeditor" class="form-control" name="body"  placeholder="Add Body" rows="16" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$body"; ?></textarea>
   </div>
   <div class="form-group">
     <label>Category</label>
@@ -84,7 +91,7 @@
   <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan Berita</button>
 </form>   </div>
     <script>
-                CKEDITOR.replace( 'editor1' );
+                CKEDITOR.replace( 'ckeditor' );
             </script>
   
      

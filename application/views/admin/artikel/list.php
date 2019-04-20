@@ -52,7 +52,8 @@
       <?php
           					$no=0;
           					foreach ($data->result_array() as $i) :
-          					   $no++;
+                       $no++;
+                       $id_artikel=$i['id_artikel'];
           					   $judul=$i['judul'];
           					   $id_admin=$i['id_admin'];
           					   $create_at	=$i['create_at'];
@@ -64,7 +65,7 @@
         				  <td><?php echo $create_at	;?></td>
                   <td style="text-align:right;">
                         <!-- <?php echo base_url().'admin_artikel/edit'.$id_artikel;?> -->
-                        <a class="btn" href=""><span class="fa fa-pencil"></span></a>
+                        <a class="btn" href="<?php echo base_url().'posts/edit/'.$id_artikel;?>"><span class="fa fa-pencil"></span></a>
                         <!-- <?php echo $id_artikel;?> -->
                         <a class="btn" data-toggle="modal" data-target="#ModalHapus"><span class="fa fa-trash"></span></a>
                   </td>

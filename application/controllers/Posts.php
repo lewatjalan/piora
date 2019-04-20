@@ -81,42 +81,10 @@ public function __construct()
 			}
 		}
 
-		public function delete($id){
-
-			$this->post_model->delete_post($id);
-
-			// Set message
-			$this->session->set_flashdata('post_deleted', 'Your post has been deleted');
-
-			redirect('news');
+		public function edit($id_artikel)
+		{
+			$data['artikel'] = $this->artikel_model->edit_artikel($id_artikel);
+			$this->load->view('admin/artikel/update',$data);
 		}
 
-		public function edit($slug){
-			$data['post'] = $this->post_model->get_posts($slug);
-
-			// Check user
-			if($this->session->userdata('user_id') != $this->post_model->get_posts($slug)['user_id']){
-				redirect('news');
-
-			}
-
-			$data['categories'] = $this->post_model->get_categories();
-
-			if(empty($data['post'])){
-				show_404();
-			}
-
-			$data['title'] = 'Edit Post';
-
-			$this->load->view('admin/view/edit_artikel', $data);
-		}
-
-		public function update(){
-			$this->post_model->update_post();
-
-			// Set message
-			$this->session->set_flashdata('post_updated', 'Your post has been updated');
-
-			redirect('news');
-		}
 	}

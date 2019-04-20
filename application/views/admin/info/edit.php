@@ -59,27 +59,33 @@
 <div class="col-sm-9">
 
   <h2>Edit Admin</h2>
-    <form action=" http://localhost/piora/info_admin/simpan_admin" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+    <form action=" http://localhost/piora/info_admin/update" enctype="multipart/form-data" method="post" accept-charset="utf-8">
         <div class="col-sm-12 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <?php foreach ($data->result_array() as $i) : ?>
-
+        <?php
+                      foreach ($admin->result_array() as $data_admin) :
+                       $id_admin=$data_admin['id_admin'];
+          					   $password=$data_admin['password'];
+          					   $nama_lengkap=$data_admin['nama_lengkap'];
+          					   $email	=$data_admin['email'];
+                       ?>
+                      <?php endforeach;?>
       <form class="form" action="" method="POST">
       <div class="form-group">
         <label for="username">Username</nama>
-        <input type="hidden" name="id" value="<?php echo $i->id_admin ?>">
-        <input type="text" name="username" class="form-control" value="<?php echo $u->username ?> required>
+        <input type="hidden" name="id" value="<?php echo $data_admin['id_admin']; ?>">
+        <input type="text" name="username"  value="<?php echo $data_admin['username']; ?>" >
       </div>
       <div class="form-group">
         <label for="password">Password</nama>
-        <input type="password" name="password" class="form-control" value="<?php echo $u->password ?> required>
+        <input type="password" name="password"  value="<?php echo $data_admin['password']; ?>" >
       </div>
      <div class="form-group">
         <label for="nama-lengkap">Nama Lengkap</nama>
-        <input type="text" name="nama_lengkap" class="form-control" value="<?php echo $u->nama_lengkap ?> required>
+        <input type="text" name="nama_lengkap"  value="<?php echo $data_admin['nama_lengkap']; ?>" >
       </div>
       <div class="form-group">
         <label for="email">Email</nama>
-        <input type="text" name="email" class="form-control" value="<?php echo $u->email ?>/>
+        <input type="text" name="email"  value="<?php echo $data_admin['email']; ?>">
      </div>
 
       <div class="form-group">
@@ -87,7 +93,7 @@
       </div>
 
     </form>
-    <?php endforeach;?>
+    
           </section>
 
       </div>

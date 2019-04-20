@@ -37,33 +37,21 @@ class Info_admin extends CI_Controller {
 		$this->load->view('admin/info/add');
 
 	}
+
+	public function update(){
+
+		$this->info_model->update_admin();
+
+		// Set message
+		$this->session->set_flashdata('admin_updated', 'Your admin has been updated');
+
+		redirect('admin/info/update');
+	}
+
 	public function edit($id_admin)
 	{
-		$where = array('id_admin' => $id_admin);
-		$data['admin'] = $this->info_model->edit_data($where,'admin')->result();
+		$data['admin'] = $this->info_model->edit_admin($id_admin);
 		$this->load->view('admin/info/edit',$data);
 	}
-
-	function update(){
-
-		$id_admin = $this->input->post('id_admin');
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		$nama_lengkap = $this->input->post('nama_lengkap');
-		$email = $this->input->post('email');
-	 
-		$data = array(
-			'username' => $username,
-			'password' => $password,
-			'nama_lengkap' => $nama_lengkap,
-			'email' => $email
-		);
-	 
-		$where = array(
-			'id_admin' => $id_admin
-		);
-	 
-		$this->info_model->update_data($where,$data,'admin');
-		redirect('admin/info');
-	}
+	
 }
