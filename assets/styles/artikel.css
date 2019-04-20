@@ -378,7 +378,7 @@ section
 .logo a
 {
 	line-height: 0.75;
-	color: blue;
+	color:  #32c69a;
 	font-size: 24px;
 	font-weight: 700;
 	text-transform: uppercase;
@@ -387,7 +387,7 @@ section
 {
 	position: relative;
 	font-size: 36px;
-	color: blue;
+	color: #32c69a;
 	line-height: 0.75;
 	vertical-align: text-top;
 }
@@ -465,7 +465,7 @@ section
 .header_nav_container
 {
 	z-index: 1;
-	background: blue;
+	background:  #32c69a;
 }
 .header_nav_content
 {
@@ -836,8 +836,8 @@ section
 	font-weight: 600;
 	line-height: 54px;
 	text-align: center;
-	color: black;
-	background: lightblue;
+	color:white;
+	background: #00cc99;
 	padding-left: 17px;
 	padding-right: 19px;
 }
@@ -874,7 +874,7 @@ section
 	width: 106px;
 	height: 31px;
 	text-align: center;
-	background: lightblue;
+	background: #00cc99;
 
 }
 .news_post_date a
@@ -883,7 +883,7 @@ section
 	line-height: 31px;
 	font-size: 12px;
 	font-weight: 600;
-	color: black;
+	color:white;
 }
 .news_post_title
 {
@@ -936,11 +936,8 @@ section
 {
 	margin-top: 34px;
 	width: 200px;
-	background:lightblue;
+	
 
-}
-.news_post_button a span{
-	color:black;
 }
 .pagination ul li
 {

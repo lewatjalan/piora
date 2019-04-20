@@ -55,11 +55,11 @@
 </div>
 
 <?php echo validation_errors(); ?>
-<?php echo form_open_multipart('admin/simpan_admin'); ?>
+<?php echo form_open_multipart('posts/create'); ?>
 <div class="col-sm-9">
 
   <h2>Buat Admin</h2>
-    <form action=" http://localhost/piora/info_admin/simpan_admin" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+    <form action="http://localhost/pabw.go.id/posts/create" enctype="multipart/form-data" method="post" accept-charset="utf-8">
         <div class="col-sm-12 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <form class="form" action="" method="POST">
@@ -73,7 +73,7 @@
     </div>
     <div class="form-group">
         <label for="nama-lengkap">Nama Lengkap</nama>
-        <input type="text" name="nama_lengkap" class="form-control" placeholder="Nama Lengkap" required>
+        <input type="text" name="nama-lengkap" class="form-control" placeholder="Nama Lengkap" required>
     </div>
     <div class="form-group">
         <label for="email">Email</nama>

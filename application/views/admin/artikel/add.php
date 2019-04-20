@@ -81,16 +81,9 @@
   </div>
   <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-paper-plane"></i> Post Berita</button>
 </form>   </div>
-<script>
-  $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-
-    CKEDITOR.replace('ckeditor');
-
-
-  });
-</script>
+    <script>
+                CKEDITOR.replace( 'editor1' );
+            </script>
   
      
 
@@ -105,6 +98,6 @@
     <script src="<?php echo base_url();?>/assets/bootstrap/js/jquery.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/holder.js"></script>
-    <script src="<?php echo base_url();?>/assets/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/ckeditor/ckeditor.js"></script>
   </body>
 </html>

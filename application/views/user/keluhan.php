@@ -11,13 +11,15 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/artikel.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/responsive.css">
+
 </head>
 <body>
+
 <div class="super_container">
 
-	<!-- Menu -->
+	<!-- Navbar -->
 
 	<div class="menu trans_500">
 		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
@@ -27,10 +29,11 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
-				<li class="menu_item"><a href="index.html">Infromasi Obat</a></li>
-				<li class="menu_item"><a href="news.html">Artikel</a></li>
-				<li class="menu_item"><a href="#">Keluhan</a></li>
-				<li class="menu_item"><a href="contact.html">FAQ</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -48,8 +51,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" style="background-image:url(<?php echo base_url();?>/assets/images/obat-1.png)"></div>
-		
+		<div class="background_image" style="background-image:url(<?php echo base_url();?>/assets/images/index_itera.png)"></div>
 
 		<!-- Header -->
 
@@ -61,11 +63,7 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="#">PIORA<span>+</span></a>	
-									</div>
-									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
-										
-										
+										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
 									</div>
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
@@ -82,15 +80,16 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li><a href="index.html">Informasi Obat</a></li>
-													<li class="active"><a href="artikel.html">Artikel</a></li>
-													<li><a href="keluhan.html">Keluhan</a></li>
-													<li><a href="faq.html">FAQ</a></li>
+													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
 												<form action="#" id="search_container_form" class="search_container_form">
-													<input type="text" class="search_container_input" placeholder="Cari" required="required">
+													<input type="text" class="search_container_input" placeholder="Search" required="required">
 													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 												</form>
 											</div>
@@ -109,7 +108,9 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Artikel</div>
+							<div class="home_title">Institut Teknologi Sumatera</div>
+							<div class="home_text">Pusat Informasi Obat ITERA.</div>
+							<!-- <div class="button home_button"><a href="#"><span>read more</span><span>read more</span></a></div> -->
 						</div>
 					</div>
 				</div>
@@ -117,76 +118,99 @@
 		</div>
 	</div>
 
-	<!-- News -->
+	
 
-	<div class="news">
+			
+
+
+
+
+	<!-- FAQ & News -->
+
+	<div class="stuff">
 		<div class="container">
 			<div class="row">
-				
-				<!-- News Posts -->
-				<div class="col-lg-8">
-					<div class="news_posts">
-						
-						<!-- News Post -->
-						<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url();?>/assets/images/kulit-manggis.png" alt=""></div>
-							<div class="news_post_content">
-								<div class="news_post_date"><a href="#">29 Maret 2019</a></div>
-								<div class="news_post_title"><a href="#">Khasiat Kulit Manggis Bagi Kesehatan Tubuh</a></div>
-								<div class="news_post_info">
-								</div>
-								<div class="news_post_text">
-									<p>Manfaat Kulit manggis saat ini paling banyak dicari dan digunakan untuk dijadikan obat alternatif berbagai macam penyakit, serta dimanfaatkan dalam urusan kecantikan. Memang ternyata buah manggis yang rasanya enak dan mengandung banyak manfaat, mempunyai fakta kalau kulitnya lah yang mempunyai manfaat lebih.
-									Kulit Manggis mempunyai kandungan senyawa xanthone yang saat ini banyak dikembangkan dan diproduksi dalam bentuk sirup, yang kemudian terkenal dengan nama sirup xanthone. Sirup ini sangat terkeenal karena mengandung zat antioksidan yang dapat melawan radikal bebas.</p>
-								</div>
-								<div class="button news_post_button"><a href="#"><span>baca selengkapnya</span><span>baca selengkapnya</span></a></div>
-							</div>
-						</div>
 
-						<!-- News Post -->
-						<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url();?>/assets/images/virus-zika.png" alt=""></div>
-							<div class="news_post_content">
-								<div class="news_post_date"><a href="#">30 Maret 2019</a></div>
-								<div class="news_post_title"><a href="#">Gejala Virus Zika</a></div>
-								<div class="news_post_text">
-									<p>Mengenai gejala virus Zika, sejumlah pakar kesehatan melihat adanya banyak kesamaan gejala antara demam berdarah dengan demam Zika. Namun, hal yang paling membedakan antara gejala virus Zika dengan  penyakit demam berdarah adalah demam yang muncul akibat infeksi virus ini cenderung tidak terlalu tinggi, kadang maksimal hanya pada suhu 38 derajat celcius.</p>
-								</div>
-								<div class="button news_post_button"><a href="#"><span>baca selengkapnya</span><span>baca selengkpanya</span></a></div>
-							</div>
-						</div>
-
-						<!-- News Post -->
-						<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url();?>/assets/images/maag.png" alt=""></div>
-							<div class="news_post_content">
-								<div class="news_post_date"><a href="#">29 Maret 2019</a></div>
-								<div class="news_post_title"><a href="#">Asam Lambung (MAAG)</a></div>
-								<div class="news_post_text">
-									<p>Maag disebabkan oleh luka pada lambung yang tidak segera terobati dan berakibat infeksi bakteri Helicobacter pylori. Luka ini terjadi oleh banyak sebab, yang paling   umum adalah pola makan tidak teratur atau sensitif terhadap menu makanan tertentu seperti rasa pedas atau yang lainnya dan ada juga penyebab lain seperti efek samping penggunaan obat antinflamasi nonsteroid (OAINS). Maag bisa mudah kambuh atau terjadi jika dipicu oleh stres, karena stres akan membuat syaraf mengeluarkan hormon berlebih yang mengganggu kinerja lambung secara keseluruhan.</p>
-								</div>
-								<div class="button news_post_button"><a href="#"><span>baca selengkapnya</span><span>baca selengkapnya</span></a></div>
-							</div>
-						</div>
+				<!-- FAQ -->
+				<div class="col-lg-12">
+					<div class="faq">
+                        <div class="faq_title">Keluhan</div>
+                        <div><h4><br><br>Jawablah pertanyaan berikut sesuai dengan kondisi yang sedang anda alami</h4></div>
 						
-					
+						<div class="elements_accordions">
+							<div class="accordions">
+
+								<div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center active"><div>apakah nafsu makan anda berkurang ?</div></div>
+									<div class="accordion_panel">
+                                    <div class="col-md-6">
+                                        <label class="radio">Ya
+                                            <input type="radio" checked="checked" name="pertanyaan1">
+                                            <span class="checkround"></span>
+                                        </label>
+                                        <label class="radio">Tidak
+                                            <input type="radio" name="pertanyaan1">
+                                            <span class="checkround"></span>
+                                    </div>
+									</div>
+								</div>
+
+								<div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center active"><div>apakah kepala anda terasa sakit/berat ?</div></div>
+									<div class="accordion_panel">
+                                    <div class="col-md-6">
+                                        <label class="radio">Ya
+                                            <input type="radio" checked="checked" name="pertanyaan2">
+                                            <span class="checkround"></span>
+                                        </label>
+                                        <label class="radio">Tidak
+                                            <input type="radio" name="pertanyaan2">
+                                            <span class="checkround"></span>
+                                    </div>
+									</div>
+								</div>
+
+								<div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center active"><div>apakah anda merasa menggigil (kedinginan) ?</div></div>
+									<div class="accordion_panel">
+                                    <div class="col-md-6">
+                                        <label class="radio">Ya
+                                            <input type="radio" checked="checked" name="pertanyaan3">
+                                            <span class="checkround"></span>
+                                        </label>
+                                        <label class="radio">Tidak
+                                            <input type="radio" name="pertanyaan3">
+                                            <span class="checkround"></span>
+                                    </div>
+									</div>
+                                </div>
+
+                                <div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center active"><div>apakah anda menjadi sulit berkonsentrasi ?</div></div>
+									<div class="accordion_panel">
+                                    <div class="col-md-6">
+                                        <label class="radio">Ya
+                                            <input type="radio" checked="checked" name="pertanyaan4">
+                                            <span class="checkround"></span>
+                                        </label>
+                                        <label class="radio">Tidak
+                                            <input type="radio" name="pertanyaan4">
+                                            <span class="checkround"></span>
+                                    </div>
+									</div>
+                                </div>
+
+                                
+                                <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">Cek Keluhan</button>
+
+
+							</div>
+						</div>
 					</div>
 				</div>
 
-				
-						
-								
+		
 
-								
-
-								
-								</div>
-
-							</div>
-						</div>
-						
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

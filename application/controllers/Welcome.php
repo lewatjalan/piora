@@ -24,9 +24,15 @@ class Welcome extends CI_Controller {
 
 	}
 	
-		public function artikel()
+	public function artikel()
 	{
 		$this->load->view('user/artikel');
+
+	}
+	
+	public function obat()
+	{
+		$this->load->view('user/obat');
 
 	}
 	
