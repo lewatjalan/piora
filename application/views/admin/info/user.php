@@ -37,7 +37,9 @@
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
   <h2 class="sub-header">Admin <a href="<?php echo base_url();?>admin/info/add" class="btn btn-success pull-right"><i class="fa fa-plus-circle fa-lg"></i> Admin Baru</a></h2>
   <div class="table-responsive">
-
+  <?php if($this->session->flashdata('message', 'edit')): ?>
+  <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('message', 'edit').'</p>'; ?>
+                    <?php endif; ?>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -48,10 +50,26 @@
         </tr>
       </thead>
       <tbody>
-      <th>1</th>
-          <th>Ini Judul</th>
-          <th>Yang Nulis Penulis</th>
-          <th>Mau Di kasih Aksi apa </th>
+      <?php
+          					$no=0;
+          					foreach ($data->result_array() as $i) :
+          					   $no++;
+          					   $username=$i['username'];
+                       $password=$i['password'];
+                       $id_admin=$i['id_admin'];
+                    ?>
+                <tr>
+                  <td><?php echo $no;?></td>
+                  <td><?php echo $username;?></td>
+        				  <td><?php echo $password;?></td>
+                  <td style="text-align:left;">
+                        <!-- <?php echo base_url().'admin_artikel/edit'.$id_artikel;?> -->
+                        <a class="btn" href="<?php echo base_url().'info_admin/edit/'.$id_admin;?>" ><span class="fa fa-pencil"></span></a>
+                        <!-- <?php echo $id_artikel;?> -->
+                        <a class="btn" href="<?php echo base_url().'info_admin/hapus_admin/'.$id_admin;?>"><span class="fa fa-trash"></span></a>
+                  </td>
+                </tr>
+				<?php endforeach;?>
       </tbody>
     </table>
 

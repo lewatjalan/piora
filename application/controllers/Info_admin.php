@@ -19,6 +19,7 @@ class Info_admin extends CI_Controller {
 	 */
 	function __construct(){
 		parent::__construct();
+		$this->load->helper('url');
 		if($this->session->userdata('status') != "login"){
             $url=base_url('admin');
             redirect($url);
@@ -36,49 +37,37 @@ class Info_admin extends CI_Controller {
 		$this->load->view('admin/info/add');
 
 	}
-	public function edit($id = null)
-	{
-	  // Jika form di submit jalankan blok kode ini
-	  if ($this->input->post('submit')) {
-		
-		// Mengatur validasi data password,
-		// # required = tidak boleh kosong
-		// # min_length[5] = password harus terdiri dari minimal 5 karakter
-		$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]');
 
-		// Jalankan validasi jika semuanya benar maka lanjutkan
-			  if ($this->form_validation->run() === TRUE) {
-  
-		  $data = array(
-			'password' => md5($this->input->post('password'), PASSWORD_DEFAULT),
-		  );
-  
-		  // Jalankan function insert pada info_model
-		  $query = $this->info_model->update($id, $data);
-  
-		  // cek jika query berhasil
-		  if ($query) $message = array('status' => true, 'message' => 'Berhasil memperbarui user');
-		  else $message = array('status' => true, 'message' => 'Gagal memperbarui user');
-  
-		  // simpan message sebagai session
-		  $this->session->set_flashdata('message', $message);
-  
-		  // refresh page
-		  redirect('info_admin/edit/'.$id, 'refresh');
-			  } 
-	  }
-	  
-	  // Ambil data user dari database
-	 // $user = $this->model_users->get_where(array('id' => $id))->row();
-  
-	  // Jika data user tidak ada maka show 404
-	  //if (!$user) show_404();
-  
-	  // Data untuk page users/add
-	  
-	  $data  = $this->load->view('admin/info/edit', $datas);
-  
-	  // Jalankan view template/layout
-	  $this->load->view('admin/info/edit', $data);
+	public function update(){
+
+		$id_admin=$this->input->post('id_admin');
+		$data = array(
+			'username' => $this->input->post('username'),
+			'password' => md5($this->input->post('password')),
+			'nama_lengkap' => $this->input->post('nama_lengkap'),
+			'email' => $this->input->post('email')
+		);
+
+		$condition['id_admin'] = $this->input->post('id_admin'); //Digunakan untuk melakukan validasi terhadap user mana yang akan diupdate nantinya
+
+		$this->info_model->editadmin_proses($data, $this->input->post('id_admin')); //passing variable $data ke info_model
+
+		$this->session->set_flashdata('message', 'edit');
+		redirect('admin/info'); //redirect page ke halaman info controller info_admin
 	}
+
+	public function hapus_admin($id_admin)
+	{
+				$this->info_model->hapus_admin($id_admin); //passing variable $data ke products_model
+
+				$this->session->set_flashdata('message', 'hapus');
+				redirect('admin/info'); //redirect page ke halaman user controller info_admin
+	}
+
+	public function edit($id_admin)
+	{
+		$data['admin'] = $this->info_model->edit_admin($id_admin);
+		$this->load->view('admin/info/edit',$data);
+	}
+	
 }

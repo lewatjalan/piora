@@ -55,28 +55,28 @@
 </div>
 
 <?php echo validation_errors(); ?>
-<?php echo form_open_multipart('posts/create'); ?>
+<?php echo form_open_multipart('admin/simpan_admin'); ?>
 <div class="col-sm-9">
 
   <h2>Buat Admin</h2>
-    <form action="http://localhost/pabw.go.id/posts/create" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+    <form enctype="multipart/form-data" method="post" accept-charset="utf-8">
         <div class="col-sm-12 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
 <form class="form" action="" method="POST">
     <div class="form-group">
-        <label for="username">Username</nama>
+        <label for="username">Username</label>
         <input type="text" name="username" class="form-control" placeholder="Username" required>
     </div>
     <div class="form-group">
-        <label for="password">Password</nama>
+        <label for="password">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Password" required>
     </div>
     <div class="form-group">
-        <label for="nama-lengkap">Nama Lengkap</nama>
-        <input type="text" name="nama-lengkap" class="form-control" placeholder="Nama Lengkap" required>
+        <label for="nama-lengkap">Nama Lengkap</label>
+        <input type="text" name="nama_lengkap" class="form-control" placeholder="Nama Lengkap" required>
     </div>
     <div class="form-group">
-        <label for="email">Email</nama>
+        <label for="email">Email</label>
         <input type="text" name="email" class="form-control" placeholder="Email"/>
     </div>
 
