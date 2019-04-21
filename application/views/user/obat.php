@@ -7,7 +7,7 @@
 <meta name="description" content="Health medical template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/bootstrap4/bootstrap.min.css">
-<link href="assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="<?php echo base_url();?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
@@ -25,7 +25,7 @@
 				<input type="text" class="menu_search_input" placeholder="Search" required="required">
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
-			<ul>	
+			<ul>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
@@ -44,21 +44,21 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<!-- Home -->
 	<div class="home">
-		<div class="background_image" style="background-image:url(<?php echo base_url();?>/assets/images/about.jpg)">	
+		<div class="background_image" style="background-image:url(<?php echo base_url();?>/assets/images/about.jpg)">
 		</div>
 		<!-- Header -->
 		<header class="header" id="header">
-			
+
 				<div class="header_top">
 					<div class="container">
 						<div class="row">
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="#">PIORA<span>+</span></a>	
+										<a href="#">PIORA<span>+</span></a>
 									</div>
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
@@ -94,7 +94,7 @@
 							</div>
 						</div>
 					</div>
-				</div>	
+				</div>
 		</header>
 
 		<div class="home_container">
@@ -112,7 +112,7 @@
 		</div>
 	</div>
 
-	
+
 
 
 	<!-- DaftarObat -->
@@ -395,7 +395,7 @@
 	<footer class="footer">
 		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url();?>/assets/images/footer.jpg" data-speed="0.8">
 		</div>
-		
+
 		<div class="footer_content">
 			<div class="container">
 				<div class="row">
@@ -404,7 +404,7 @@
 					<div class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
-								<a href="#">PIORA<span>+</span></a>	
+								<a href="#">PIORA<span>+</span></a>
 							</div>
 							<div class="footer_about_text">Pusat Informasi Obat ITERA.</div>
 							<div class="footer_social">
@@ -418,7 +418,7 @@
 								</ul>
 							</div>
 							<div class="copyright">
-									Copyright &copy;<script>document.write(new Date().getFullYear());</script> Piora | Pusat Informasi obat Institut Teknologi Sumatera 
+									Copyright &copy;<script>document.write(new Date().getFullYear());</script> Piora | Pusat Informasi obat Institut Teknologi Sumatera
 							</div>
 						</div>
 					</div>
