@@ -55,11 +55,11 @@
 </div>
 
 <?php echo validation_errors(); ?>
-<?php echo form_open_multipart('admin/simpan_admin'); ?>
+<?php echo form_open_multipart('info_admin/update'); ?>
 <div class="col-sm-9">
 
   <h2>Edit Admin</h2>
-    <form action=" http://localhost/piora/info_admin/update" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+    <form  enctype="multipart/form-data" method="post" accept-charset="utf-8">
         <div class="col-sm-12 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <?php
                       foreach ($admin->result_array() as $data_admin) :
@@ -71,20 +71,20 @@
                       <?php endforeach;?>
       <form class="form" action="" method="POST">
       <div class="form-group">
-        <label for="username">Username</nama>
-        <input type="hidden" name="id" value="<?php echo $data_admin['id_admin']; ?>">
+        <label for="username">Username</label>
+        <input type="hidden" name="id_admin" value="<?php echo $data_admin['id_admin']; ?>">
         <input type="text" name="username"  value="<?php echo $data_admin['username']; ?>" >
       </div>
       <div class="form-group">
-        <label for="password">Password</nama>
-        <input type="password" name="password"  value="<?php echo $data_admin['password']; ?>" >
+        <label for="password">Password</label>
+        <input type="password" name="password">
       </div>
      <div class="form-group">
-        <label for="nama-lengkap">Nama Lengkap</nama>
+        <label for="nama-lengkap">Nama Lengkap</label>
         <input type="text" name="nama_lengkap"  value="<?php echo $data_admin['nama_lengkap']; ?>" >
       </div>
       <div class="form-group">
-        <label for="email">Email</nama>
+        <label for="email">Email</label>
         <input type="text" name="email"  value="<?php echo $data_admin['email']; ?>">
      </div>
 

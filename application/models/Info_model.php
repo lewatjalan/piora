@@ -29,16 +29,16 @@
       return $this->db->get();
     }
 		
-		public function update_admin(){
-			$data = array(
-				'id_admin' => $this->input->post('id_admin'),
-				'nama_lengkap' => $this->input->post('nama_lengkap'),
-				'username' => $this->input->post('username'),
-				'password' => md5($this->input->post('password')),
-				'email' => $this->input->post('email')
-			);
+		function editadmin_proses($data,$id_admin)
+		{
+			$this->db->where('id_admin', $id_admin);
+				$this->db->update('admin', $data);
+		}
 
-			$this->db->where('id_admin', $this->input->post('id_admin'));
-			return $this->db->update('admin', $data);
+		function hapus_admin($id_admin)
+		{
+			//delete admin berdasarkan id
+			$this->db->where('id_admin', $id_admin);
+			$this->db->delete('admin');
 		}
 	}

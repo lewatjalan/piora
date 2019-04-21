@@ -37,7 +37,9 @@
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
   <h2 class="sub-header">Admin <a href="<?php echo base_url();?>admin/info/add" class="btn btn-success pull-right"><i class="fa fa-plus-circle fa-lg"></i> Admin Baru</a></h2>
   <div class="table-responsive">
-
+  <?php if($this->session->flashdata('message', 'edit')): ?>
+  <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('message', 'edit').'</p>'; ?>
+                    <?php endif; ?>
     <table class="table table-striped">
       <thead>
         <tr>
@@ -64,7 +66,7 @@
                         <!-- <?php echo base_url().'admin_artikel/edit'.$id_artikel;?> -->
                         <a class="btn" href="<?php echo base_url().'info_admin/edit/'.$id_admin;?>"><span class="fa fa-pencil"></span></a>
                         <!-- <?php echo $id_artikel;?> -->
-                        <a class="btn" data-toggle="modal" data-target="#ModalHapus"><span class="fa fa-trash"></span></a>
+                        <a class="btn" href="<?php echo base_url().'info_admin/hapus_admin/'.$id_admin;?>"><span class="fa fa-trash"></span></a>
                   </td>
                 </tr>
 				<?php endforeach;?>

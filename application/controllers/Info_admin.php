@@ -40,12 +40,28 @@ class Info_admin extends CI_Controller {
 
 	public function update(){
 
-		$this->info_model->update_admin();
+		$id_admin=$this->input->post('id_admin');
+		$data = array(
+			'username' => $this->input->post('username'),
+			'password' => md5($this->input->post('password')),
+			'nama_lengkap' => $this->input->post('nama_lengkap'),
+			'email' => $this->input->post('email')
+		);
 
-		// Set message
-		$this->session->set_flashdata('admin_updated', 'Your admin has been updated');
+		$condition['id_admin'] = $this->input->post('id_admin'); //Digunakan untuk melakukan validasi terhadap user mana yang akan diupdate nantinya
 
-		redirect('admin/info/update');
+		$this->info_model->editadmin_proses($data, $this->input->post('id_admin')); //passing variable $data ke info_model
+
+		$this->session->set_flashdata('message', 'edit');
+		redirect('admin/info'); //redirect page ke halaman info controller info_admin
+	}
+
+	public function hapus_admin($id_admin)
+	{
+				$this->info_model->hapus_admin($id_admin); //passing variable $data ke products_model
+
+				$this->session->set_flashdata('message', 'hapus');
+				redirect('artikel'); //redirect page ke halaman utama controller products
 	}
 
 	public function edit($id_admin)
