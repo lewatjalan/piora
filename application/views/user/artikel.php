@@ -11,13 +11,13 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/artikel.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/responsive.css">
 </head>
 <body>
 <div class="super_container">
 
-	<!-- Menu -->
+	<!-- Navbar -->
 
 	<div class="menu trans_500">
 		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
@@ -27,11 +27,11 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
-				<li class="menu_item"><a href="index.html">Infromasi Obat</a></li>
-				<li class="menu_item"><a href="news.html">Artikel</a></li>
-				<li class="menu_item"><a href="#">Obat</a></li>
-				<li class="menu_item"><a href="#">Keluhan</a></li>
-				<li class="menu_item"><a href="contact.html">FAQ</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -85,9 +85,9 @@
 												<ul class="d-flex flex-row align-items-center justify-content-start">
 													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
 													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
-													<li><a href="#">Obat</a></li>
-													<li><a href="#">Keluhan</a></li>
-													<li><a href="#">FAQ</a></li>
+													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">

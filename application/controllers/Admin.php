@@ -1,67 +1,68 @@
-<?php
-
-class Admin extends CI_Controller {
-
-    /**
-    * Check if the user is logged in, if he's not, 
-    * send him to the login page
-    * @return void
-    */	
+<?php 
+ 
+class Admin extends CI_Controller{
 	function index()
 	{
-		if($this->session->userdata('!is_logged_in')){
-			redirect('admin/index');
+		if($this->session->userdata('status') != "login"){
+			$this->load->view('admin/login');
         }else{
         	$this->load->view('admin/dashboard');	
         }
 	}
 
-    /**
-    * encript the password 
-    * @return mixed
-    */	
-    function __encrip_password($password) {
-        return md5($password);
-    }	
+		function get_all_admin(){
+			$hsl=$this->db->query("SELECT * FROM admin");
+			return $hsl;	
+		}
 
-    /**
-    * check the username and the password with the database
-    * @return void
-    */
-	function validate_credentials()
-	{	
+		function simpan_admin(){
+			if(!$this->session->userdata('status')){
+							redirect('admin');
+				} 
 
-		$this->load->model('Admin_model');
+			$this->form_validation->set_rules('username', 'Username', 'required');
+			$this->form_validation->set_rules('password', 'Password', 'required');
 
-		$user_name = $this->input->post('user_name');
-		$password = $this->__encrip_password($this->input->post('password'));
+			if($this->form_validation->run() === FALSE){
+					
+				$this->load->view('admin/info/add');
+					
+			} else {}
+				// Set message
+				$this->info_model->simpan_admin();
+				$this->session->set_flashdata('admin_created', 'Your akun has been created');
+				redirect('admin/info');	
+		}
 
-		$is_valid = $this->Admin_model->validate($user_name, $password);
-		
-		if($is_valid)
-		{
-			$data = array(
-				'user_name' => $user_name,
-				'is_logged_in' => true
+
+	function auth(){
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		$where = array(
+			'username' => $username,
+			'password' => md5($password)
 			);
-			$this->session->set_userdata($data);
-			redirect('user/home');
+		$user_id = $this->admin_model->cek_login("admin",$where)->num_rows();
+		if($user_id > 0){
+ 
+			$data_session = array(
+				'nama' => $username,
+				'user_id' => $user_id,
+				'status' => "login"
+				);
+ 
+			$this->session->set_userdata($data_session);
+ 
+			redirect(base_url("admin/dashboard"));
+		}else{
+			$this->session->set_flashdata('login_failed', 'Login Gagal ! Silahkan Coba Kembali');
+			$this->load->view('admin/login');
 		}
-		else // incorrect username or password
-		{
-			$data['message_error'] = TRUE;
-			$this->load->view('admin/login', $data);	
-		}
-	}	
-	
-	/**
-    * Destroy the session, and logout the user.
-    * @return void
-    */		
-	function logout()
-	{
-		$this->session->sess_destroy();
-		redirect('admin');
 	}
 
+	function logout(){
+		$this->session->sess_destroy();
+		$this->session->set_flashdata('Admin_loggedout', 'You are now logged out');
+		redirect(base_url('admin'));
+	}
 }

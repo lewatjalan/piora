@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../img/ArdiantaPargo.png">
+    <link rel="icon" href="<?php echo base_url();?>/assets/images/Logo PIO.png">
 
     <title>Administrator PIORA</title>
 
@@ -19,7 +19,7 @@
     <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
 
     <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
   </head>
 
@@ -36,8 +36,6 @@
 
           <section id="konten">
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <h1 class="page-header">Halo <?php echo $this->session->userdata("nama"); ?></h1>
-
   <div class="container top">
 
 <ul class="breadcrumb">
@@ -45,7 +43,7 @@
     <a href="<?php echo site_url("admin"); ?>">
       <?php echo ucfirst($this->uri->segment(1));?>
     </a> 
-    <span class="divider">/</span>
+    <span class="divider"></span>
   </li>
   <li class="active">
     <?php echo ucfirst($this->uri->segment(2));?>
@@ -53,10 +51,7 @@
 </ul>
 
 <div class="page-header users-header">
-  <h2>
-    <?php echo ucfirst($this->uri->segment(2));?> 
-    <a  href="<?php echo site_url("admin").'/'.$this->uri->segment(2); ?>/add" class="btn btn-success">Add a new</a>
-  </h2>
+  
 </div>
 
 <?php echo validation_errors(); ?>
@@ -64,20 +59,20 @@
 <div class="col-sm-9">
 
   <h2>Buat Artikel</h2>
-    <form action="http://localhost/pabw.go.id/posts/create" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+    <form action="http://localhost/piora/posts/create" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
     <label>Title</label>
-    <input type="text" class="form-control" name="title" placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
+    <input type="text" class="form-control" name="judul" placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
   </div>
   <div class="form-group">
     <label>Body</label>
-    <textarea id="editor1" class="form-control" name="body" placeholder="Add Body" rows="16" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <textarea id="ckeditor" class="form-control" name="body" placeholder="Add Body" rows="16" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
   </div>
   <div class="form-group">
     <label>Category</label>
-    <select name="category_id" class="form-control">
-              <option value="2">Herbal</option>
-              <option value="1">Technology</option>
+    <select name="kategori" class="form-control">
+              <option value="Herbal">Herbal</option>
+              <option value="">Technology</option>
           </select>
   </div>
   <div class="form-group">
@@ -86,9 +81,16 @@
   </div>
   <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-paper-plane"></i> Post Berita</button>
 </form>   </div>
-    <script>
-                CKEDITOR.replace( 'editor1' );
-            </script>
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+
+    CKEDITOR.replace('ckeditor');
+
+
+  });
+</script>
   
      
 
@@ -103,5 +105,6 @@
     <script src="<?php echo base_url();?>/assets/bootstrap/js/jquery.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/holder.js"></script>
+    <script src="<?php echo base_url();?>/assets/ckeditor/ckeditor.js"></script>
   </body>
 </html>

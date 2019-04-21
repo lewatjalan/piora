@@ -6,12 +6,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Health medical template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/bootstrap4/bootstrap.min.css">
-<link href="<?php echo base_url();?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/responsive.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="<?php echo base_url();?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
+
+    <!-- font-awesome untuk ikon -->
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+<script src="<?php echo base_url();?>/bootstrap/js/jquery.js"></script>
+    <script src="<?php echo base_url();?>/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>/bootstrap/js/holder.js"></script>
 </head>
 <body>

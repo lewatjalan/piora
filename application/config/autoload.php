@@ -90,7 +90,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 //$autoload['helper'] = array();
-$autoload['helper'] = array('url', 'form', 'cookie');
+$autoload['helper'] = array('url', 'form', 'cookie','text');
 /*
 | -------------------------------------------------------------------
 |  Auto-load Config files
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array();
+$autoload['model'] = array('admin_model','artikel_model','post_model','info_model','obat_model');

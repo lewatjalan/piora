@@ -19,7 +19,7 @@
     <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
 
     <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
   </head>
 
@@ -35,7 +35,7 @@
           </aside>
 
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <h2 class="sub-header">Semua Artikel <a href="add" class="btn btn-success pull-right"><i class="fa fa-plus-circle fa-lg"></i> Artikel Baru</a></h2>
+  <h2 class="sub-header">Semua Artikel <a href="<?php echo base_url();?>admin/artikel/add" class="btn btn-success pull-right"><i class="fa fa-plus-circle fa-lg"></i> Artikel Baru</a></h2>
   <div class="table-responsive">
 
     <table class="table table-striped">
@@ -45,10 +45,31 @@
           <th>Judul</th>
           <th>Penulis</th>
           <th>Tanggal</th>
+          <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
-         
+      <?php
+          					$no=0;
+          					foreach ($data->result_array() as $i) :
+                       $no++;
+                       $id_artikel=$i['id_artikel'];
+          					   $judul=$i['judul'];
+          					   $id_admin=$i['id_admin'];
+          					   $create_at	=$i['create_at'];
+                    ?>
+                <tr>
+                  <td><?php echo $no;?></td>
+                  <td><?php echo $judul;?></td>
+        				  <td><?php echo $id_admin;?></td>
+        				  <td><?php echo $create_at	;?></td>
+                  <td style="text-align:left;">
+                        <a class="btn" href="<?php echo base_url().'posts/edit/'.$id_artikel;?>"><span class="fa fa-pencil"></span></a>
+                        <a class="btn" href="<?php echo base_url().'posts/delete/'.$id_artikel;?>"><span class="fa fa-trash"></span></a>
+                  </td>
+                </tr>
+				<?php endforeach;?>
+      
       </tbody>
     </table>
 

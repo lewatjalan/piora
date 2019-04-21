@@ -11,7 +11,6 @@
     <link rel="icon" href="<?php echo base_url();?>/assets/images/Logo PIO.png">
 
     <title>Administrator PIORA</title>
-
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -19,8 +18,7 @@
     <link href="<?php echo base_url();?>/assets/bootstrap/css/style-admin.css" rel="stylesheet">
 
     <!-- font-awesome untuk ikon -->
-    <link href="<?php echo base_url();?>/font-awesome/css/font-awesome.css" rel="stylesheet">
-
+    <link href="<?php echo base_url();?>/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
   </head>
 
   <body>
