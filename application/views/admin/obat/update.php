@@ -55,34 +55,45 @@
 </div>
 
 <?php echo validation_errors(); ?>
-<?php echo form_open_multipart('posts/create'); ?>
+<?php echo form_open_multipart('obat/update'); ?>
 <div class="col-sm-9">
-
+<?php
+                      foreach ($obatq->result_array() as $data_obat) :
+                       $id_obat=$data_obat['id_obat'];
+          					   $nama_generik=$data_obat['nama_generik'];
+          					   $merek_dagang=$data_obat['merek_dagang'];
+                       $indikasi_obat	=$data_obat['indikasi_obat'];
+                       $bentuk	=$data_obat['bentuk'];
+                       $reaksi_obatlain	=$data_obat['reaksi_obatlain'];
+                       $reaksi_makanan	=$data_obat['reaksi_makanan'];
+                       ?>
+                      <?php endforeach;?>
   <h2>Merubah Obat</h2>
-    <form action="http://localhost/pabw.go.id/posts/create" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+    <form  enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
     <label>Nama Generik</label>
-    <input type="text" class="form-control" name="title" placeholder="Nama Generik" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
+    <input type="hidden" name="id_obat" value="<?php echo "$id_obat"; ?>">
+    <input type="text" class="form-control" name="nama_generik" value="<?php echo "$nama_generik"; ?>" placeholder="Nama Generik" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
   </div>
   <div class="form-group">
     <label>Nama Merek Dagang</label>
-    <textarea id="editor1" class="form-control" name="merekdagang" placeholder="Nama Merek Dagang" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <textarea id="editor1" class="form-control" name="merek_dagang"  placeholder="Nama Merek Dagang" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$merek_dagang"; ?></textarea>
   </div>
   <div class="form-group">
     <label>Indikasi Obat</label>
-    <textarea id="editor1" class="form-control" name="Indikasiobat" placeholder="Indikasi Obat" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <textarea id="editor1" class="form-control" name="indikasi_obat"  placeholder="Indikasi Obat" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$indikasi_obat"; ?></textarea>
   </div>
   <div class="form-group">
     <label>Bentuk</label>
-    <textarea id="editor1" class="form-control" name="Bentuk" placeholder="Bentuk Obat" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <textarea id="editor1" class="form-control" name="bentuk" placeholder="Bentuk Obat" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$bentuk"; ?></textarea>
   </div>
   <div class="form-group">
     <label>Rekasi dengan obat lain</label>
-    <textarea id="editor1" class="form-control" name="reaksiobat" placeholder="Rekasi dengan obat lain" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <textarea id="editor1" class="form-control" name="reaksi_obatlain" placeholder="Rekasi dengan obat lain" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$reaksi_obatlain"; ?></textarea>
   </div>
   <div class="form-group">
     <label>Rekasi dengan Makanan</label>
-    <textarea id="editor1" class="form-control" name="reaksimakanan" placeholder="Rekasi dengan makanan" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <textarea id="editor1" class="form-control" name="reaksi_makanan" placeholder="Rekasi dengan makanan" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$reaksi_makanan"; ?></textarea>
   </div>
   <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan </button>
 </form>   </div>

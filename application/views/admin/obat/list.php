@@ -49,7 +49,26 @@
         </tr>
       </thead>
       <tbody>
-         
+      <?php
+          					$no=0;
+          					foreach ($data->result_array() as $i) :
+                       $no++;
+                       $id_obat=$i['id_obat'];
+          					   $nama_generik=$i['nama_generik'];
+                       $merek_dagang=$i['merek_dagang'];
+                       $id_admin=$i['id_admin'];
+                    ?>
+                <tr>
+                  <td><?php echo $no;?></td>
+                  <td><?php echo $nama_generik;?></td>
+        				  <td><?php echo $merek_dagang;?></td>
+                  <td><?php echo $id_admin;?></td>
+                  <td style="text-align:left;">
+                        <a class="btn" href="<?php echo base_url().'obat/edit/'.$id_obat;?>" ><span class="fa fa-pencil"></span></a>
+                        <a class="btn" href="<?php echo base_url().'obat/delete/'.$id_obat;?>"><span class="fa fa-trash"></span></a>
+                  </td>
+                </tr>
+				<?php endforeach;?>
       </tbody>
     </table>
 

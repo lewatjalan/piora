@@ -26,7 +26,8 @@ class Admin_obat extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('admin/obat/list');
+		$x['data']=$this->obat_model->get_all_obat();
+		$this->load->view('admin/obat/list', $x);
 
 	}
 
