@@ -87,4 +87,24 @@ public function __construct()
 			$this->load->view('admin/artikel/update',$data);
 		}
 
+		public function update(){
+
+			$this->post_model->update_post();
+	
+			// Set message
+			$this->session->set_flashdata('post_updated', 'Your post has been updated');
+	
+			redirect('admin/artikel/');
+		}
+	
+		public function delete($id_artikel){
+	
+			$this->post_model->delete_artikel($id_artikel);
+	
+			// Set message
+			$this->session->set_flashdata('post_deleted', 'Your post has been deleted');
+	
+			redirect('admin/artikel/list');
+		}
+
 	}

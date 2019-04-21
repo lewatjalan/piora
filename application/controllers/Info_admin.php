@@ -61,7 +61,7 @@ class Info_admin extends CI_Controller {
 				$this->info_model->hapus_admin($id_admin); //passing variable $data ke products_model
 
 				$this->session->set_flashdata('message', 'hapus');
-				redirect('artikel'); //redirect page ke halaman utama controller products
+				redirect('admin/info'); //redirect page ke halaman user controller info_admin
 	}
 
 	public function edit($id_admin)

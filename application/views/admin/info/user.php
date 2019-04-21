@@ -64,7 +64,7 @@
         				  <td><?php echo $password;?></td>
                   <td style="text-align:left;">
                         <!-- <?php echo base_url().'admin_artikel/edit'.$id_artikel;?> -->
-                        <a class="btn" href="<?php echo base_url().'info_admin/edit/'.$id_admin;?>"><span class="fa fa-pencil"></span></a>
+                        <a class="btn" href="<?php echo base_url().'info_admin/edit/'.$id_admin;?>" ><span class="fa fa-pencil"></span></a>
                         <!-- <?php echo $id_artikel;?> -->
                         <a class="btn" href="<?php echo base_url().'info_admin/hapus_admin/'.$id_admin;?>"><span class="fa fa-trash"></span></a>
                   </td>

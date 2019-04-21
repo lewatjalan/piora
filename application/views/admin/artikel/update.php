@@ -66,11 +66,11 @@
           					   $kategori	=$data_artikel['kategori'];
                        ?>
                       <?php endforeach;?>
-  <h2>Update Artikel</h2>
-    <form action="<?php echo base_url().'admin_artikel/update'?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+  <h2>Edit Artikel</h2>
+    <form action="<?php echo base_url().'posts/update'?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
     <label>Title</label>
-    <input type="hidden" name="kode" value="<?php echo "$id_artikel"; ?>">
+    <input type="hidden" name="id_artikel" value="<?php echo "$id_artikel"; ?>">
     <input type="text" class="form-control" name="judul"  placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')" value="<?php echo "$judul"; ?>"/>
   </div>
   <div class="form-group">
@@ -79,14 +79,10 @@
   </div>
   <div class="form-group">
     <label>Category</label>
-    <select name="category_id" class="form-control">
-              <option value="2">Herbal</option>
-              <option value="1">Technology</option>
+    <select name="kategori" class="form-control">
+              <option value="Herbal">Herbal</option>
+              <option value="Technology">Technology</option>
           </select>
-  </div>
-  <div class="form-group">
-    <label>Upload Image</label>
-    <input type="file" name="userfile" size="20" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
   </div>
   <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan Berita</button>
 </form>   </div>

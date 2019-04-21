@@ -36,14 +36,4 @@ class Admin_artikel extends CI_Controller {
 		$this->load->view('admin/artikel/add');
 
 	}
-
-	public function update(){
-
-		$this->post_model->update_post();
-
-		// Set message
-		$this->session->set_flashdata('post_updated', 'Your post has been updated');
-
-		redirect('admin/artikel/');
-	}
 }
