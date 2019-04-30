@@ -7,7 +7,11 @@
 <meta name="description" content="Health medical template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/bootstrap4/bootstrap.min.css">
+<<<<<<< HEAD
+<link href="<?php echo base_url();?>assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+=======
 <link href="<?php echo base_url();?>/assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+>>>>>>> master
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
@@ -120,273 +124,45 @@
 	<div class="stuff">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4">
+				<?php
+				foreach ($data as $colNum => $col) {
+				?>
+				<div class="col-lg-<?php echo round(12/count($data)); ?>">
 					<div class="daftarobat">
-						<div class="faq_title">Daftar Obat</div>
+						<div class="faq_title"><?php if ($colNum == 0) { echo "Daftar Obat"; } else { echo "<br>"; } ?></div>
 						<div class="elements_accordions">
 							<div class="accordions">
 								<div class="accordion_container">
+
+				<?php
+					foreach($col as $key => $value) {
+				?>
 									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> A </div>
+										<div> <?php echo $key; ?> </div>
 									</div>
 									<div class="accordion_panel">
 										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> B </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> C </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> D </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> E </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> F </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> G </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> H </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> I </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
+				<?php
+						foreach ($value as $row) {
+				?>
+											<a href="<?php echo base_url("keterangan/obat/".$row['id']); ?>" target="_blank"><?php echo $row['nama']; ?></a>
+											<br>
+				<?php
+						}
+				?>
+									 </div>
+								 </div>
+				<?php
+					}
+				?>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4">
-					<div class="daftarobat">
-						<div class="faq_title"><br></div>
-						<div class="elements_accordions">
-							<div class="accordions">
-								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> J </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> K </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> L </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> M </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> N </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> O </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> P </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> Q </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> R </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="daftarobat">
-						<div class="faq_title"><br></div>
-						<div class="elements_accordions">
-							<div class="accordions">
-								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> S </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> T </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> U </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> V </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> W </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> X </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> Y </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-									<div class="accordion d-flex flex-row align-items-center deactive">
-										<div> Z </div>
-									</div>
-									<div class="accordion_panel">
-										<div>
-											<p>SSSSSSSSSSSSSSSSSSSSS
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<?php
+				}
+				?>
 			</div>
 		</div>
 	</div>

@@ -69,5 +69,5 @@ class Info_admin extends CI_Controller {
 		$data['admin'] = $this->info_model->edit_admin($id_admin);
 		$this->load->view('admin/info/edit',$data);
 	}
-	
+
 }

@@ -23,19 +23,45 @@ class Welcome extends CI_Controller {
 		$this->load->view('user/home');
 
 	}
-	
 	public function artikel()
 	{
 		$this->load->view('user/artikel');
 
 	}
-	
+
 	public function obat()
 	{
-		$this->load->view('user/obat');
+		$this->load->model("Obat_model");
 
+		$data = array(
+			$this->getData("A", "I"),
+			$this->getData("J", "R"),
+			$this->getData("S", "Z"),
+		);
+
+		$hasil = array(
+			'data' => $data
+		);
+
+		$this->load->view('user/obat', $hasil);
 	}
-	
+
+	private function getData($start, $finish) {
+		$alphas = range($start, $finish);
+		foreach ($alphas as $alpha) {
+			$data[$alpha] = array();
+			$result = $this->Obat_model->daftarObat($alpha)->result();
+			foreach ($result as $row) {
+				$obat = array(
+					'id' => $row->id_obat,
+					'nama' => $row->nama_generik
+				);
+				array_push($data[$alpha], $obat);
+			}
+		}
+		return $data;
+	}
+
 	public function faq()
 	{
 		$this->load->view('user/faq');
