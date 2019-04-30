@@ -23,7 +23,6 @@ class Welcome extends CI_Controller {
 		$this->load->view('user/home');
 
 	}
-
 	public function artikel()
 	{
 		$this->load->view('user/artikel');

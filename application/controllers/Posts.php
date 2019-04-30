@@ -7,8 +7,8 @@ public function __construct()
 	$this->load->helper('url_helper');
 }
 
-		public function index($offset = 0){	
-			// Pagination Config	
+		public function index($offset = 0){
+			// Pagination Config
 			$config['base_url'] = base_url() . 'admin/artikel/add';
 			$config['total_rows'] = $this->db->count_all('artikel');
 			$config['per_page'] = 3;
@@ -43,7 +43,7 @@ public function __construct()
 
 			if(!$this->session->userdata('status')){
                         redirect('admin');
-			} 
+			}
 
 			//$data['kategori'] = $this->post_model->get_categories();
 
@@ -51,9 +51,9 @@ public function __construct()
 			$this->form_validation->set_rules('body', 'Body', 'required');
 
 			if($this->form_validation->run() === FALSE){
-				
+
 				$this->load->view('admin/artikel/add');
-				
+
 			} else {
 				// Upload Image
 				$config['upload_path'] = './assets/images/posts';
@@ -90,20 +90,20 @@ public function __construct()
 		public function update(){
 
 			$this->post_model->update_post();
-	
+
 			// Set message
 			$this->session->set_flashdata('post_updated', 'Your post has been updated');
-	
+
 			redirect('admin/artikel/');
 		}
-	
+
 		public function delete($id_artikel){
-	
+
 			$this->post_model->delete_artikel($id_artikel);
-	
+
 			// Set message
 			$this->session->set_flashdata('post_deleted', 'Your post has been deleted');
-	
+
 			redirect('admin/artikel/list');
 		}
 

@@ -1,11 +1,11 @@
-<?php 
- 
+<?php
+
 class Login extends CI_Controller{
- 
+
 	function index(){
 		$this->load->view('admin/login');
 	}
- 	
+
 	// Register user
 		public function register(){
 			$data['title'] = 'Sign Up';
@@ -40,15 +40,15 @@ class Login extends CI_Controller{
 			);
 		$user_id = $this->login_model->cek_login("admin",$where)->num_rows();
 		if($user_id > 0){
- 
+
 			$data_session = array(
 				'nama' => $username,
 				'user_id' => $user_id,
 				'status' => "login"
 				);
- 
+
 			$this->session->set_userdata($data_session);
- 
+
 			redirect(base_url("admin"));
 		}else{
 			$this->session->set_flashdata('login_failed', 'Login Gagal ! Silahkan Coba Kembali');
@@ -61,4 +61,5 @@ class Login extends CI_Controller{
 		$this->session->set_flashdata('Admin_loggedout', 'You are now logged out');
 		redirect(base_url('admin'));
 	}
+
 }

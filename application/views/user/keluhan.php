@@ -47,7 +47,7 @@
 			</ul>
 		</div>
 	</div>
-	
+
 	<!-- Home -->
 
 	<div class="home">
@@ -63,7 +63,7 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
+										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>
 									</div>
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
@@ -99,7 +99,7 @@
 							</div>
 						</div>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</header>
 
@@ -118,9 +118,9 @@
 		</div>
 	</div>
 
-	
 
-			
+
+
 
 
 
@@ -136,7 +136,7 @@
 					<div class="faq">
                         <div class="faq_title">Keluhan</div>
                         <div><h4><br><br>Jawablah pertanyaan berikut sesuai dengan kondisi yang sedang anda alami</h4></div>
-						
+
 						<div class="elements_accordions">
 							<div class="accordions">
 
@@ -200,7 +200,7 @@
 									</div>
                                 </div>
 
-                                
+
                                 <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">Cek Keluhan</button>
 
 
@@ -209,7 +209,7 @@
 					</div>
 				</div>
 
-		
+
 
 			</div>
 		</div>
@@ -227,7 +227,7 @@
 					<div class="col-lg-3 footer_col">
 						<div class="footer_about">
 							<div class="logo">
-								<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
+								<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>
 							</div>
 							<div class="footer_about_text">Pusat Informasi Obat ITERA.</div>
 							<div class="footer_social">

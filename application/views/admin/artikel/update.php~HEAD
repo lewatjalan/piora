@@ -36,13 +36,15 @@
 
           <section id="konten">
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <h1 class="page-header">Halo <?php echo $this->session->userdata("nama"); ?></h1>
+
   <div class="container top">
 
 <ul class="breadcrumb">
   <li>
     <a href="<?php echo site_url("admin"); ?>">
       <?php echo ucfirst($this->uri->segment(1));?>
-    </a>
+    </a> 
     <span class="divider"></span>
   </li>
   <li class="active">
@@ -51,46 +53,45 @@
 </ul>
 
 <div class="page-header users-header">
-
+  
 </div>
 
 <?php echo validation_errors(); ?>
-<?php echo form_open_multipart('obat/create'); ?>
 <div class="col-sm-9">
-
-  <h2>Tambah Obat</h2>
-    <form enctype="multipart/form-data" method="post" accept-charset="utf-8">
+<?php
+                      foreach ($artikel->result_array() as $data_artikel) :
+                       $id_artikel=$data_artikel['id_artikel'];
+          					   $judul=$data_artikel['judul'];
+          					   $body=$data_artikel['body'];
+          					   $kategori	=$data_artikel['kategori'];
+                       ?>
+                      <?php endforeach;?>
+  <h2>Edit Artikel</h2>
+    <form action="<?php echo base_url().'posts/update'?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
     <div class="form-group">
-    <label>Nama Generik</label>
-    <input type="text" class="form-control" name="nama_generik" placeholder="Nama Generik" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')">
+    <label>Title</label>
+    <input type="hidden" name="id_artikel" value="<?php echo "$id_artikel"; ?>">
+    <input type="text" class="form-control" name="judul"  placeholder="Add Title" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')" value="<?php echo "$judul"; ?>"/>
   </div>
   <div class="form-group">
-    <label>Nama Merek Dagang</label>
-    <textarea id="editor1" class="form-control" name="merek_dagang" placeholder="Nama Merek Dagang" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <label>Body</label>
+    <textarea id="ckeditor" class="form-control" name="body"  placeholder="Add Body" rows="16" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$body"; ?></textarea>
   </div>
   <div class="form-group">
-    <label>Indikasi Obat</label>
-    <textarea id="editor1" class="form-control" name="indikasi_obat" placeholder="Indikasi Obat" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <label>Category</label>
+    <select name="kategori" class="form-control">
+              <option value="Herbal">Herbal</option>
+              <option value="Technology">Technology</option>
+          </select>
   </div>
-  <div class="form-group">
-    <label>Bentuk</label>
-    <textarea id="editor1" class="form-control" name="bentuk" placeholder="Bentuk Obat" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
-  </div>
-  <div class="form-group">
-    <label>Rekasi dengan obat lain</label>
-    <textarea id="editor1" class="form-control" name="reaksi_obatlain" placeholder="Rekasi dengan obat lain" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
-  </div>
-  <div class="form-group">
-    <label>Rekasi dengan Makanan</label>
-    <textarea id="editor1" class="form-control" name="reaksi_makanan" placeholder="Rekasi dengan makanan" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
-  </div>
-  <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-paper-plane"></i> Tambah Obat</button>
-</form>
-
-</div>
+  <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan Berita</button>
+</form>   </div>
     <script>
-                CKEDITOR.replace( 'editor1' );
+                CKEDITOR.replace( 'ckeditor' );
             </script>
+  
+     
+
           </section>
 
       </div>
@@ -102,6 +103,5 @@
     <script src="<?php echo base_url();?>/assets/bootstrap/js/jquery.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>/assets/bootstrap/js/holder.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>/assets/ckeditor/ckeditor.js"></script>
   </body>
 </html>
