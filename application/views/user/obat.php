@@ -140,7 +140,7 @@
 				<?php
 						foreach ($value as $row) {
 				?>
-											<a href="<?php echo base_url("keterangan/".$row['id']); ?>"><?php echo $row['nama']; ?></a>
+											<a href="<?php echo base_url("keterangan/obat/".$row['id']); ?>" target="_blank"><?php echo $row['nama']; ?></a>
 											<br>
 				<?php
 						}

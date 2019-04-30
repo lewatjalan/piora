@@ -6,8 +6,8 @@
         $this->load->helper('url_helper');
         }
 
-		public function index(){	
-           
+		public function index(){
+
 		}
 
 		public function view($slug = NULL){
@@ -27,15 +27,15 @@
 
 			if(!$this->session->userdata('status')){
 							redirect('admin');
-				} 
+				}
 
 			$this->form_validation->set_rules('nama_generik', 'Nama_generik', 'required');
 			$this->form_validation->set_rules('indikasi_obat', 'Indikasi_obat', 'required');
 
 			if($this->form_validation->run() === FALSE){
-					
+
 				$this->load->view('admin/obat/add');
-					
+
 			} else {}
 				// Set message
 				$this->obat_model->simpan_obat();
@@ -59,26 +59,24 @@
 				'merek_dagang' => $this->input->post('merek_dagang'),
 				'indikasi_obat' => $this->input->post('indikasi_obat'),
 				'bentuk' => $this->input->post('bentuk'),
-				'slug' => $slug,
-				'reaksi_obatlain' => $this->input->post('reaksi_obatlain'),
 				'reaksi_makanan' => $this->input->post('reaksi_makanan')
             );
-    
+
             $condition['id_obat'] = $this->input->post('id_obat'); //Digunakan untuk melakukan validasi terhadap user mana yang akan diupdate nantinya
-    
+
             $this->obat_model->editobat_proses($data, $this->input->post('id_obat')); //passing variable $data ke info_model
-    
+
             $this->session->set_flashdata('message', 'edit');
             redirect('admin/obat'); //redirect page ke halaman info controller info_admin
         }
-	
+
 		public function delete($id_obat){
-	
+
 			$this->obat_model->delete_obat($id_obat);
-	
+
 			// Set message
 			$this->session->set_flashdata('post_deleted', 'Your post has been deleted');
-	
+
 			redirect('admin/obat/list');
 		}
 
