@@ -42,7 +42,7 @@
   <li>
     <a href="<?php echo site_url("admin"); ?>">
       <?php echo ucfirst($this->uri->segment(1));?>
-    </a> 
+    </a>
     <span class="divider"></span>
   </li>
   <li class="active">
@@ -51,7 +51,7 @@
 </ul>
 
 <div class="page-header users-header">
-  
+
 </div>
 
 <?php echo validation_errors(); ?>
@@ -85,7 +85,7 @@
     <textarea id="editor1" class="form-control" name="reaksi_makanan" placeholder="Rekasi dengan makanan" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
   </div>
   <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-paper-plane"></i> Tambah Obat</button>
-</form>   
+</form>
 
 </div>
     <script>

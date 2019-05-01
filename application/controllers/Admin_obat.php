@@ -24,6 +24,7 @@ class Admin_obat extends CI_Controller {
             redirect($url);
         };
 	}
+
 	public function index()
 	{
 		$x['data']=$this->obat_model->get_all_obat();

@@ -74,6 +74,9 @@ $route['admin/info/add'] = 'info_admin/add';
 
 $route['admin/dashboard'] = 'dashboard/index';
 
+// Keterangan Controller
+$route['keterangan/(:any)'] = 'keterangan/index/$1';
+
 $route['default_controller'] = 'Welcome';
 
 $route['artikel'] = 'Welcome/artikel';

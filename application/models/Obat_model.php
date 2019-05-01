@@ -49,10 +49,10 @@
 		  $this->db->where('id_obat', $id_obat); //Akan melakukan select terhadap row yang memiliki artikelId sesuai dengan artikelId yang telah dipilih
 		  $this->db->select("*");
 		  $this->db->from("obat");
-	  
+
 		  return $this->db->get();
 		}
-		
+
 		function editobat_proses($data,$id_obat)
 		{
 			$this->db->where('id_obat', $id_obat);
@@ -63,5 +63,18 @@
 			//delete admin berdasarkan id
 			$this->db->where('id_admin', $id_admin);
 			$this->db->delete('obat');
+		}
+
+		function daftarObat ($a) {
+			$this->db->select("*");
+			$this->db->from("obat");
+			$this->db->like("nama_generik",$a,"after");
+			$this->db->order_by("nama_generik", "ASC");
+
+			return $this->db->get();
+		}
+
+		function getObatById($id) {
+			return $this->db->get_where('obat', array('id_obat' => $id));
 		}
 	}
