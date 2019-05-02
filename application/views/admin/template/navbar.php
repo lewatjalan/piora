@@ -1,6 +1,6 @@
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container-fluid" style="background:#428BCA;">
-    <div class="navbar-header">
+<div class="navbar-default navbar-nav navbar-fixed-top" role="navigation">
+  <div class="container-fluid" style="background:#32c69a;">
+    <div class="main_nav">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>

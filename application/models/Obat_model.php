@@ -53,9 +53,14 @@
 				$this->db->update('obat', $data);
 		}
 
-		public function delete_obat($id_admin){
-			//delete admin berdasarkan id
-			$this->db->where('id_admin', $id_admin);
+		function get_id_obat($id_obat){
+			$hsl=$this->db->query("SELECT * FROM obat where id_obat='$id_obat'");
+			return $hsl;
+		}
+
+		public function delete_obat($id_obat){
+			//delete obat berdasarkan id
+			$this->db->where('id_obat', $id_obat);
 			$this->db->delete('obat');
 		}
 	}

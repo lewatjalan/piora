@@ -56,12 +56,13 @@ class Info_admin extends CI_Controller {
 		redirect('admin/info'); //redirect page ke halaman info controller info_admin
 	}
 
-	public function hapus_admin($id_admin)
-	{
-				$this->info_model->hapus_admin($id_admin); //passing variable $data ke products_model
-
-				$this->session->set_flashdata('message', 'hapus');
-				redirect('admin/info'); //redirect page ke halaman user controller info_admin
+	function hapus_admin(){
+		$id_admin=$this->input->post('id_admin');
+		$data=$this->info_model->get_admin_login($id_admin);
+		$q=$data->row_array();
+		$this->info_model->hapus_admin($id_admin);
+	    echo $this->session->set_flashdata('msg','success-hapus');
+	    redirect('admin/info');
 	}
 
 	public function edit($id_admin)

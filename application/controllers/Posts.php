@@ -97,14 +97,13 @@ public function __construct()
 			redirect('admin/artikel/');
 		}
 	
-		public function delete($id_artikel){
-	
+		public function delete(){
+			$id_artikel=$this->input->post('id_artikel');
+			$data=$this->post_model->get_id_artikel($id_artikel);
+			$q=$data->row_array();
 			$this->post_model->delete_artikel($id_artikel);
-	
-			// Set message
-			$this->session->set_flashdata('post_deleted', 'Your post has been deleted');
-	
-			redirect('admin/artikel/list');
-		}
+			echo $this->session->set_flashdata('msg','success-hapus');
+			redirect('admin/obat');
+			}
 
 	}
