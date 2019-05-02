@@ -65,7 +65,7 @@
                        $indikasi_obat	=$data_obat['indikasi_obat'];
                        $bentuk	=$data_obat['bentuk'];
                        $reaksi_obatlain	=$data_obat['reaksi_obatlain'];
-                       $reaksi_makanan	=$data_obat['reaksi_makanan'];
+                       $deskripsi	=$data_obat['deskripsi'];
                        ?>
                       <?php endforeach;?>
   <h2>Merubah Obat</h2>
@@ -93,7 +93,7 @@
   </div>
   <div class="form-group">
     <label>Rekasi dengan Makanan</label>
-    <textarea id="editor1" class="form-control" name="reaksi_makanan" placeholder="Rekasi dengan makanan" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$reaksi_makanan"; ?></textarea>
+    <textarea id="editor1" class="form-control" name="deskripsi" placeholder="Rekasi dengan makanan" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"><?php echo "$deskripsi"; ?></textarea>
   </div>
   <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-save"></i> Simpan </button>
 </form>   </div>

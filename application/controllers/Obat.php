@@ -59,9 +59,8 @@
 				'merek_dagang' => $this->input->post('merek_dagang'),
 				'indikasi_obat' => $this->input->post('indikasi_obat'),
 				'bentuk' => $this->input->post('bentuk'),
-				'slug' => $slug,
 				'reaksi_obatlain' => $this->input->post('reaksi_obatlain'),
-				'reaksi_makanan' => $this->input->post('reaksi_makanan')
+				'deskripsi' => $this->input->post('deskripsi')
             );
     
             $condition['id_obat'] = $this->input->post('id_obat'); //Digunakan untuk melakukan validasi terhadap user mana yang akan diupdate nantinya
