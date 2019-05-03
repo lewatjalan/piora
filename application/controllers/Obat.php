@@ -60,6 +60,8 @@
 				'indikasi_obat' => $this->input->post('indikasi_obat'),
 				'bentuk' => $this->input->post('bentuk'),
 				'reaksi_makanan' => $this->input->post('reaksi_makanan')
+				'reaksi_obatlain' => $this->input->post('reaksi_obatlain'),
+				'deskripsi' => $this->input->post('deskripsi')
             );
 
             $condition['id_obat'] = $this->input->post('id_obat'); //Digunakan untuk melakukan validasi terhadap user mana yang akan diupdate nantinya
@@ -72,6 +74,11 @@
 
 		public function delete($id_obat){
 
+	
+		public function delete(){
+			$id_obat=$this->input->post('id_obat');
+			$data=$this->obat_model->get_id_obat($id_obat);
+			$q=$data->row_array();
 			$this->obat_model->delete_obat($id_obat);
 
 			// Set message
@@ -79,5 +86,8 @@
 
 			redirect('admin/obat/list');
 		}
+			echo $this->session->set_flashdata('msg','success-hapus');
+			redirect('admin/obat');
+			}
 
 	}

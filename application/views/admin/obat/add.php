@@ -81,8 +81,8 @@
     <textarea id="editor1" class="form-control" name="reaksi_obatlain" placeholder="Rekasi dengan obat lain" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
   </div>
   <div class="form-group">
-    <label>Rekasi dengan Makanan</label>
-    <textarea id="editor1" class="form-control" name="reaksi_makanan" placeholder="Rekasi dengan makanan" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
+    <label>Deskripsi Obat</label>
+    <textarea id="editor1" class="form-control" name="deskripsi" placeholder="deskripsi" rows="3" required oninvalid="this.setCustomValidity('silakan isi kolom ini')" oninput="setCustomValidity('')"></textarea>
   </div>
   <button type="submit" name="login" class="btn btn-primary pull-right"><i class="fa fa-paper-plane"></i> Tambah Obat</button>
 </form>

@@ -35,6 +35,11 @@
 				$this->db->update('admin', $data);
 		}
 
+		function get_admin_login($id_admin){
+			$hsl=$this->db->query("SELECT * FROM admin where id_admin='$id_admin'");
+			return $hsl;
+		}
+
 		function hapus_admin($id_admin)
 		{
 			//delete admin berdasarkan id

@@ -65,7 +65,7 @@
         				  <td><?php echo $create_at	;?></td>
                   <td style="text-align:left;">
                         <a class="btn" href="<?php echo base_url().'posts/edit/'.$id_artikel;?>"><span class="fa fa-pencil"></span></a>
-                        <a class="btn" href="<?php echo base_url().'posts/delete/'.$id_artikel;?>"><span class="fa fa-trash"></span></a>
+                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id_artikel;?>"><span class="fa fa-trash"></span></a>
                   </td>
                 </tr>
 				<?php endforeach;?>
@@ -76,6 +76,34 @@
   </div>
 </div>
 
+<?php foreach ($data->result_array() as $i) :
+              $id_artikel=$i['id_artikel'];
+              $judul=$i['judul'];
+              $id_admin=$i['id_admin'];
+            ?>
+	<!--Modal Hapus Pengguna-->
+        <div class="modal fade" id="ModalHapus<?php echo $id_artikel;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Artikel</h4>
+                    </div>
+                    <form class="form-horizontal" action="<?php echo base_url().'posts/delete/'?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+							       <input type="hidden" name="id_artikel" value="<?php echo $id_artikel;?>"/>
+                            <p>Apakah Anda yakin mau menghapus Artikel <b><?php echo $judul;?></b> ?</p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Hapus</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+	<?php endforeach;?>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

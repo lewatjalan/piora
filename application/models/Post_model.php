@@ -76,4 +76,9 @@
 				$query = $this->db->get_where('posts', array('category_id' => $category_id));
 			return $query->result_array();
 		}
+
+		function get_id_artikel($id_artikel){
+			$hsl=$this->db->query("SELECT * FROM artikel where id_artikel='$id_artikel'");
+			return $hsl;
+		}
 	}
