@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/artikel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/responsive.css">
 </head>
 <body>
@@ -28,10 +28,11 @@
 			</form>
 			<ul>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Artikel'); ?>">Artikel</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
+
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -62,11 +63,7 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="#">PIORA<span>+</span></a>	
-									</div>
-									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
-										
-										
+										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
 									</div>
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
@@ -83,8 +80,8 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+													<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+													<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
 													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
@@ -92,7 +89,7 @@
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
 												<form action="#" id="search_container_form" class="search_container_form">
-													<input type="text" class="search_container_input" placeholder="Cari" required="required">
+													<input type="text" class="search_container_input" placeholder="Search" required="required">
 													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 												</form>
 											</div>
@@ -119,64 +116,53 @@
 		</div>
 	</div>
 
-	<!-- News -->
+	<!-- Artikel / News -->
 
 	<div class="news">
 		<div class="container">
-			<div class="row">
+			<div class="row"> 
+
 				
 				<!-- News Posts -->
+
 				<div class="col-lg-8">
 					<div class="news_posts">
-						
-						<!-- News Post -->
-						<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url();?>/assets/images/kulit-manggis.png" alt=""></div>
+						 <?php foreach ($konten->result_array() as $br) :
+          					   //$id_admin=$br['id_admin'];
+          					   $judul=$br['judul'];
+          					   $gambar=$br['gambar'];
+          					   $body=$br['body'];
+          					   $slug=$br['slug'];
+          					   $id_artikel=$br['id_artikel'];
+          					   $kategori=$br['kategori'];
+           					   $create_at=$br['create_at'];
+                    ?>
+
+                    <div class="news_post">
+							<div class="news_post_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div>
+							
 							<div class="news_post_content">
-								<div class="news_post_date"><a href="#">29 Maret 2019</a></div>
-								<div class="news_post_title"><a href="#">Khasiat Kulit Manggis Bagi Kesehatan Tubuh</a></div>
+								<div class="news_post_date"><a href="#"><td><?php echo $create_at ?></td></a></div>
+								<div class="news_post_title"><a href="#"><td><?php echo $judul; ?></td></a></div>
 								<div class="news_post_info">
 								</div>
 								<div class="news_post_text">
-									<p>Manfaat Kulit manggis saat ini paling banyak dicari dan digunakan untuk dijadikan obat alternatif berbagai macam penyakit, serta dimanfaatkan dalam urusan kecantikan. Memang ternyata buah manggis yang rasanya enak dan mengandung banyak manfaat, mempunyai fakta kalau kulitnya lah yang mempunyai manfaat lebih.
-									Kulit Manggis mempunyai kandungan senyawa xanthone yang saat ini banyak dikembangkan dan diproduksi dalam bentuk sirup, yang kemudian terkenal dengan nama sirup xanthone. Sirup ini sangat terkeenal karena mengandung zat antioksidan yang dapat melawan radikal bebas.</p>
+									<p><td><?php echo word_limiter($body,20); ?></td></p>
 								</div>
-								<div class="button news_post_button"><a href="#"><span>baca selengkapnya</span><span>baca selengkapnya</span></a></div>
+							
+								</div>
+								<div class="button news_post_button"><a href="<?php echo site_url('detail_artikel/read/'.$id_artikel); ?>/<?php echo $slug;?>"><span>baca selengkapnya</span><span>baca selengkapnya</span></a></div>
 							</div>
 						</div>
+               
+				<?php endforeach;?>
 
-						<!-- News Post -->
-						<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url();?>/assets/images/virus-zika.png" alt=""></div>
-							<div class="news_post_content">
-								<div class="news_post_date"><a href="#">30 Maret 2019</a></div>
-								<div class="news_post_title"><a href="#">Gejala Virus Zika</a></div>
-								<div class="news_post_text">
-									<p>Mengenai gejala virus Zika, sejumlah pakar kesehatan melihat adanya banyak kesamaan gejala antara demam berdarah dengan demam Zika. Namun, hal yang paling membedakan antara gejala virus Zika dengan  penyakit demam berdarah adalah demam yang muncul akibat infeksi virus ini cenderung tidak terlalu tinggi, kadang maksimal hanya pada suhu 38 derajat celcius.</p>
-								</div>
-								<div class="button news_post_button"><a href="#"><span>baca selengkapnya</span><span>baca selengkpanya</span></a></div>
-							</div>
-						</div>
-
-						<!-- News Post -->
-						<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url();?>/assets/images/maag.png" alt=""></div>
-							<div class="news_post_content">
-								<div class="news_post_date"><a href="#">29 Maret 2019</a></div>
-								<div class="news_post_title"><a href="#">Asam Lambung (MAAG)</a></div>
-								<div class="news_post_text">
-									<p>Maag disebabkan oleh luka pada lambung yang tidak segera terobati dan berakibat infeksi bakteri Helicobacter pylori. Luka ini terjadi oleh banyak sebab, yang paling   umum adalah pola makan tidak teratur atau sensitif terhadap menu makanan tertentu seperti rasa pedas atau yang lainnya dan ada juga penyebab lain seperti efek samping penggunaan obat antinflamasi nonsteroid (OAINS). Maag bisa mudah kambuh atau terjadi jika dipicu oleh stres, karena stres akan membuat syaraf mengeluarkan hormon berlebih yang mengganggu kinerja lambung secara keseluruhan.</p>
-								</div>
-								<div class="button news_post_button"><a href="#"><span>baca selengkapnya</span><span>baca selengkapnya</span></a></div>
-							</div>
-						</div>
+				
 						
-					
-					</div>
-				</div>
+								
 
-				
-				
+								
+
 								
 								</div>
 
@@ -192,7 +178,7 @@
 	<!-- Footer -->
 
 	<footer class="footer">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url();?>/assets/images/footer.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" style="background-image:url(<?php echo base_url();?>/assets/images/footer.jpg" data-speed="0.8"></div>
 		<div class="footer_content">
 			<div class="container">
 				<div class="row">
@@ -206,7 +192,7 @@
 							<div class="footer_about_text">Pusat Informasi Obat ITERA.</div>
 							<div class="footer_social">
 								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+									<li>																<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>

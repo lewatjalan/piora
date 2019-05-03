@@ -76,7 +76,12 @@ $route['admin/dashboard'] = 'dashboard/index';
 
 $route['default_controller'] = 'Welcome';
 
-$route['artikel'] = 'Welcome/artikel';
+$route['index'] = 'Welcome';
+
+$route['keterangan/(:any)'] = 'keterangan/index/$1';
+
+$route['artikel'] = 'detail_artikel/index/$1';
+$route['home'] = 'detail_artikel/andex/$1';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
