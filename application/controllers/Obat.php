@@ -71,16 +71,13 @@
             redirect('admin/obat'); //redirect page ke halaman info controller info_admin
         }
 
-		public function delete($id_obat){
+		public function delete(){
 			$id_obat=$this->input->post('id_obat');
 			$data=$this->obat_model->get_id_obat($id_obat);
 			$q=$data->row_array();
 			$this->obat_model->delete_obat($id_obat);
-
-			// Set message
-			$this->session->set_flashdata('post_deleted', 'Your post has been deleted');
-
-			redirect('admin/obat/list');
-		}
+			echo $this->session->set_flashdata('msg','success-hapus');
+			redirect('admin/obat');
+			}
 
 	}
