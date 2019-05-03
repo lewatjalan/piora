@@ -70,11 +70,16 @@
 			return $query->result_array();
 		}
 
-		public function get_posts_by_category($category_id){
-			$this->db->order_by('posts.id', 'DESC');
-			$this->db->join('categories', 'categories.id = posts.category_id');
-				$query = $this->db->get_where('posts', array('category_id' => $category_id));
-			return $query->result_array();
+		public function delete_artikel($id_artikel){
+			$image_file_name = $this->db->select('gambar')->get_where('artikel', array('id_artikel' => $id_artikel))->row()->post_image;
+			$cwd = getcwd(); // save the current working directory
+			$image_file_path = $cwd."\\assets\\images\\posts\\";
+			chdir($image_file_path);
+			unlink($image_file_name);
+			chdir($cwd); // Restore the previous working directory
+			$this->db->where('id_artikel', $id_artikel);
+			$this->db->delete('artikel');
+			return true;
 		}
 
 		function get_id_artikel($id_artikel){
