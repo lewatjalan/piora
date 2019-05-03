@@ -22,7 +22,8 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->model('model_artikel');
 		$this->load->helper(array('text'));
-		$data['konten'] = $this->model_artikel->select_all();
+		//$data['news'] = $this->news->get_posts(3);
+		$data['konten'] = $this->model_artikel->get_posts(3);
 		$this->load->view('user/home', $data);
 
 	}

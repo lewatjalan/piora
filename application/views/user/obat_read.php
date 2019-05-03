@@ -51,14 +51,14 @@
 		<div>
 		<!-- Header -->
 		<header class="header" id="header">
-
+			<div>
 				<div class="header_top">
 					<div class="container">
 						<div class="row">
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="#">PIORA<span>+</span></a>
+										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
 									</div>
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
@@ -75,8 +75,8 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+													<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+													<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
 													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
@@ -94,7 +94,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>	
+			</div>
 		</header>
 	</div>
 
