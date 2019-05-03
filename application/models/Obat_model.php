@@ -69,10 +69,8 @@
 			$this->db->from("obat");
 			$this->db->like("nama_generik",$a,"after");
 			$this->db->order_by("nama_generik", "ASC");
-
 			return $this->db->get();
 		}
-
 		function getObatById($id) {
 			return $this->db->get_where('obat', array('id_obat' => $id));
 		}

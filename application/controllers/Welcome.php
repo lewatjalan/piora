@@ -20,7 +20,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('user/home');
+		$this->load->model('model_artikel');
+		$this->load->helper(array('text'));
+		//$data['news'] = $this->news->get_posts(3);
+		$data['konten'] = $this->model_artikel->get_posts(3);
+		$this->load->view('user/home', $data);
 
 	}
 	public function artikel()
@@ -32,20 +36,16 @@ class Welcome extends CI_Controller {
 	public function obat()
 	{
 		$this->load->model("Obat_model");
-
 		$data = array(
 			$this->getData("A", "I"),
 			$this->getData("J", "R"),
 			$this->getData("S", "Z"),
 		);
-
 		$hasil = array(
 			'data' => $data
 		);
-
 		$this->load->view('user/obat', $hasil);
 	}
-
 	private function getData($start, $finish) {
 		$alphas = range($start, $finish);
 		foreach ($alphas as $alpha) {
@@ -61,7 +61,7 @@ class Welcome extends CI_Controller {
 		}
 		return $data;
 	}
-
+	
 	public function faq()
 	{
 		$this->load->view('user/faq');

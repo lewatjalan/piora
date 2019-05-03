@@ -28,9 +28,9 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
-				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-				<li class="menu_item"><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
-				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Home'); ?>">Home</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('obat'); ?>">Obat</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 			</ul>
@@ -79,8 +79,8 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+													<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+													<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
 													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
@@ -122,42 +122,31 @@
 		<div class="container">
 			<div class="row row-eq-height">
 
+			<?php $i=0 ?>
+			<?php foreach ($konten->result_array() as $br) :
+          					   //$id_admin=$br['id_admin'];
+          					   $judul=$br['judul'];
+          					   $gambar=$br['gambar'];
+          					   $body=$br['body'];
+          					   $slug=$br['slug'];
+          					   $id_artikel=$br['id_artikel'];
+          					   $kategori=$br['kategori'];
+           					   $create_at=$br['create_at'];
+                    ?>
 				<!-- Info Box -->
 				<div class="col-lg-4 info_box_col">
 					<div class="info_box">
-						<div class="info_image"><img src="<?php echo base_url();?>/assets/images/info_1.jpg" alt=""></div>
+						<div class="info_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div>
 						<div class="info_content">
-							<div class="info_title">Free Consultations</div>
-							<div class="info_text">Arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus mollis.</div>
-							<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+							<div class="info_title"><?php echo $judul; ?></div>
+							<div class="info_text"><?php echo word_limiter($body,10); ?></div>
+							<div class="button info_button"><a href="<?php echo site_url('detail_artikel/read/'.$id_artikel); ?>"><span>read more</span><span>read more</span></a></div>
 						</div>
 					</div>
+				<?php if (++$i == 2) break; ?>
+          <?php endforeach; ?>	
+					
 				</div>
-
-				<!-- Info Box -->
-				<div class="col-lg-4 info_box_col">
-					<div class="info_box">
-						<div class="info_image"><img src="<?php echo base_url();?>/assets/images/info_2.jpg" alt=""></div>
-						<div class="info_content">
-							<div class="info_title">Emergency Care</div>
-							<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
-							<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-						</div>
-					</div>
-				</div>
-				
-				<!-- Info Box -->
-				<div class="col-lg-4 info_box_col">
-					<div class="info_box">
-						<div class="info_image"><img src="<?php echo base_url();?>/assets/images/info_1.jpg" alt=""></div>
-						<div class="info_content">
-							<div class="info_title">Emergency Care</div>
-							<div class="info_text">Morbi arcu neque, scelerisque eget ligula ac, congue tempor felis. Integer tempor, eros a egestas finibus, dolor risus.</div>
-							<div class="button info_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -228,63 +217,6 @@
 						</div>
 					</div>
 				</div>
-
-				<!-- Latest News -->
-				<div class="col-lg-5">
-					<div class="news">
-						<div class="news_title">Latest News</div>
-						<div class="news_subtitle">read all about it</div>
-						<div class="news_container">
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="<?php echo base_url();?>/assets/images/latest_1.jpg" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">A simple blog post</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="<?php echo base_url();?>/assets/images/latest_2.jpg" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">A new way to see things in medicine</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-							<!-- Latest News Post -->
-							<div class="latest d-flex flex-row align-items-start justify-content-start">
-								<div><div class="latest_image"><img src="<?php echo base_url();?>/assets/images/latest_3.jpg" alt=""></div></div>
-								<div class="latest_content">
-									<div class="latest_title"><a href="news.html">Why is Pharma industry so big?</a></div>
-									<div class="latest_info">
-										<ul class="d-flex flex-row align-items-start justify-content-start">
-											<li><a href="#">by Jane Smith</a></li>
-											<li><a href="#">April 25, 2018</a></li>
-										</ul>
-									</div>
-									<div class="latest_comments"><a href="#">2 Comments</a></div>
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -292,7 +224,7 @@
 	<!-- Footer -->
 
 	<footer class="footer">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url();?>/assets/images/footer.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" style="background-image:url(<?php echo base_url();?>/assets/images/footer.jpg" data-speed="0.8"></div>
 		<div class="footer_content">
 			<div class="container">
 				<div class="row">
@@ -306,7 +238,7 @@
 							<div class="footer_about_text">Pusat Informasi Obat ITERA.</div>
 							<div class="footer_social">
 								<ul class="d-flex flex-row align-items-center justify-content-start">
-									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+									<li>																<a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>

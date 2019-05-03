@@ -64,20 +64,6 @@
 									<div class="logo">
 										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
 									</div>
-									<!--
-									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
-										<div class="header_top_nav">
-											<ul class="d-flex flex-row align-items-center justify-content-start">
-												<li><a href="#">Help Desk</a></li>
-												<li><a href="#">Emergency Services</a></li>
-												<li><a href="#">Appointment</a></li>
-											</ul>
-										</div>
-										<div class="header_top_phone">
-											<i class="fa fa-phone" aria-hidden="true"></i>
-											<span>+34 586 778 8892</span>
-										</div>
-									</div> -->
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
 							</div>
@@ -93,8 +79,8 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+													<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+													<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
 													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>

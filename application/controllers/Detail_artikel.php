@@ -25,11 +25,21 @@ class Detail_artikel extends CI_Controller {
 	*/
 	
 	
-	public function read($slug = NULL) {
+	public function read($id_artikel) {
 		$this->load->model('model_artikel');
-		$this->load->helper(array('text'));
-		$data['konten'] = $this->model_artikel->select_all($slug);
+		$post = $this->model_artikel->get($id_artikel);
+        if(!$post) {
+            $this->template->alert(
+                'Could not load the requested item',
+                'warning'
+            );
+            redirect('user/artikel');
+            return;
+        }
+
+        $data['konten'] = $post;
 		$this->load->view('user/read_artikel', $data);
+
   }
 }
 

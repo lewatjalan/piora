@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/pop.css">
 
 </head>
 <body>
@@ -80,8 +81,8 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-													<li><a href="<?php echo site_url('Welcome/artikel'); ?>">Artikel</a></li>
+													<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+													<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
 													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
 													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
 													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
@@ -126,6 +127,7 @@
 
 
 	<!-- FAQ & News -->
+	<!-- keluhan -->
 
 	<div class="stuff">
 		<div class="container">
@@ -141,8 +143,8 @@
 							<div class="accordions">
 
 								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center active"><div>apakah nafsu makan anda berkurang ?</div></div>
-									<div class="accordion_panel">
+									<div>apakah anda merasa demam ?</div>
+									
                                     <div class="col-md-6">
                                         <label class="radio">Ya
                                             <input type="radio" checked="checked" name="pertanyaan1">
@@ -152,12 +154,12 @@
                                             <input type="radio" name="pertanyaan1">
                                             <span class="checkround"></span>
                                     </div>
-									</div>
+									
 								</div>
 
 								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center active"><div>apakah kepala anda terasa sakit/berat ?</div></div>
-									<div class="accordion_panel">
+									<div>apakah kepala anda terasa sakit dan kelelahan ?</div>
+									
                                     <div class="col-md-6">
                                         <label class="radio">Ya
                                             <input type="radio" checked="checked" name="pertanyaan2">
@@ -166,13 +168,13 @@
                                         <label class="radio">Tidak
                                             <input type="radio" name="pertanyaan2">
                                             <span class="checkround"></span>
-                                    </div>
+                                    
 									</div>
 								</div>
 
 								<div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center active"><div>apakah anda merasa menggigil (kedinginan) ?</div></div>
-									<div class="accordion_panel">
+									<div>apakah anda merasa menggigil ?</div>
+									
                                     <div class="col-md-6">
                                         <label class="radio">Ya
                                             <input type="radio" checked="checked" name="pertanyaan3">
@@ -182,12 +184,12 @@
                                             <input type="radio" name="pertanyaan3">
                                             <span class="checkround"></span>
                                     </div>
-									</div>
+									
                                 </div>
 
                                 <div class="accordion_container">
-									<div class="accordion d-flex flex-row align-items-center active"><div>apakah anda menjadi sulit berkonsentrasi ?</div></div>
-									<div class="accordion_panel">
+									<div>apakah anda merasakan nyeri di area otot ?</div>
+									
                                     <div class="col-md-6">
                                         <label class="radio">Ya
                                             <input type="radio" checked="checked" name="pertanyaan4">
@@ -196,12 +198,18 @@
                                         <label class="radio">Tidak
                                             <input type="radio" name="pertanyaan4">
                                             <span class="checkround"></span>
-                                    </div>
+                                    
 									</div>
                                 </div>
 
-
-                                <button  class="btn cust-btn " type="button" id="btn-registration" style="font-size: 20PX;letter-spacing: 1px;">Cek Keluhan</button>
+                                <div id="button"><a href="#popup">Cek Keluhan</a></div>
+    
+									<div id="popup">
+										<div class="window">
+											<a href="#" class="close-button" title="Close"></a>
+											<h2>Dugaan Sementara anda mengalami gejala Flu</h2>
+										</div>
+									</div>
 
 
 							</div>

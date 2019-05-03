@@ -79,7 +79,7 @@
 			chdir($cwd); // Restore the previous working directory
 			$this->db->where('id_artikel', $id_artikel);
 			$this->db->delete('artikel');
-			return true;
+			return true;  
 		}
 
 		function get_id_artikel($id_artikel){

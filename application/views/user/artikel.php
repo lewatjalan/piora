@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/artikel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/responsive.css">
 </head>
 <body>
@@ -63,11 +63,7 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="#">PIORA<span>+</span></a>	
-									</div>
-									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
-										
-										
+										<a href="<?php echo site_url('Welcome'); ?>">PIORA<span>+</span></a>	
 									</div>
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
 								</div>
@@ -84,15 +80,16 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li><a href="index.html">Informasi Obat</a></li>
-													<li class="active"><a href="artikel.html">Artikel</a></li>
-													<li><a href="keluhan.html">Keluhan</a></li>
-													<li><a href="faq.html">FAQ</a></li>
+													<li class="active"><a href="<?php echo site_url('index'); ?>">Home</a></li>
+													<li><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
+													<li><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+													<li><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
+													<li><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
 												<form action="#" id="search_container_form" class="search_container_form">
-													<input type="text" class="search_container_input" placeholder="Cari" required="required">
+													<input type="text" class="search_container_input" placeholder="Search" required="required">
 													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 												</form>
 											</div>
@@ -130,8 +127,8 @@
 
 				<div class="col-lg-8">
 					<div class="news_posts">
-						 <?php foreach ($artikel->result_array() as $br) :
-          					   $id_admin=$br['id_admin'];
+						 <?php foreach ($konten->result_array() as $br) :
+          					   //$id_admin=$br['id_admin'];
           					   $judul=$br['judul'];
           					   $gambar=$br['gambar'];
           					   $body=$br['body'];
@@ -142,7 +139,7 @@
                     ?>
 
                     <div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url(); ?>assets/images/<?php echo $gambar;?>" alt=""></div>
+							<div class="news_post_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div>
 							
 							<div class="news_post_content">
 								<div class="news_post_date"><a href="#"><td><?php echo $create_at ?></td></a></div>
@@ -150,11 +147,11 @@
 								<div class="news_post_info">
 								</div>
 								<div class="news_post_text">
-									<p><td><?php echo word_limiter($body,50); ?></td></p>
+									<p><td><?php echo word_limiter($body,20); ?></td></p>
 								</div>
 							
 								</div>
-								<div class="button news_post_button"><a href="http://localhost/piora/Artikel/detail/<?php echo $id_artikel;?>/<?php echo $slug;?>"><span>baca selengkapnya</span><span>baca selengkapnya</span></a></div>
+								<div class="button news_post_button"><a href="<?php echo site_url('detail_artikel/read/'.$id_artikel); ?>/<?php echo $slug;?>"><span>baca selengkapnya</span><span>baca selengkapnya</span></a></div>
 							</div>
 						</div>
                

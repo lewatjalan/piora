@@ -11,12 +11,9 @@
       }
       echo var_dump($result);
     }
-
-
   public function obat () {
     $key = $this->uri->segment(3);
     $data['isi'] = $this->db->query("SELECT * FROM obat WHERE id_obat = $key");
     $this->load->view('user/obat_read', $data);
     }
-
   }
