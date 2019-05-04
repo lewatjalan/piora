@@ -37,9 +37,10 @@
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
   <h2 class="sub-header">Admin <a href="<?php echo base_url();?>admin/info/add" class="btn btn-success pull-right"><i class="fa fa-plus-circle fa-lg"></i> Admin Baru</a></h2>
   <div class="table-responsive">
-  <?php if($this->session->flashdata('message', 'edit')): ?>
-  <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('message', 'edit').'</p>'; ?>
+  <?php if($this->session->flashdata('message', 'Data berhasil diperbarui')): ?>
+  <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('message', 'Data berhasil diperbarui').'</p>'; ?>
                     <?php endif; ?>
+ 
     <table class="table table-striped">
       <thead>
         <tr>

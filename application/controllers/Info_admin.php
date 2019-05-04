@@ -52,7 +52,7 @@ class Info_admin extends CI_Controller {
 
 		$this->info_model->editadmin_proses($data, $this->input->post('id_admin')); //passing variable $data ke info_model
 
-		$this->session->set_flashdata('message', 'edit');
+		$this->session->set_flashdata('message', 'Anda berhasil memperbarui data');
 		redirect('admin/info'); //redirect page ke halaman info controller info_admin
 	}
 
@@ -61,7 +61,7 @@ class Info_admin extends CI_Controller {
 		$data=$this->info_model->get_admin_login($id_admin);
 		$q=$data->row_array();
 		$this->info_model->hapus_admin($id_admin);
-	    echo $this->session->set_flashdata('msg','success-hapus');
+	    $this->session->set_flashdata('message', 'Anda berhasil menghapus data');
 	    redirect('admin/info');
 	}
 

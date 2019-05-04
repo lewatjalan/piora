@@ -30,7 +30,7 @@ class Admin extends CI_Controller{
 			} else {}
 				// Set message
 				$this->info_model->simpan_admin();
-				$this->session->set_flashdata('admin_created', 'Your akun has been created');
+				$this->session->set_flashdata('message', 'Akun Anda telah dibuat');
 				redirect('admin/info');	
 		}
 

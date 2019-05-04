@@ -75,7 +75,7 @@ public function __construct()
 				$this->post_model->create_post($post_image);
 
 				// Set message
-				$this->session->set_flashdata('post_created', 'Your post has been created');
+				$this->session->set_flashdata('message', 'Posting Anda telah dibuat');
 
 				redirect('admin/artikel');
 			}
@@ -92,13 +92,10 @@ public function __construct()
 			$this->post_model->update_post();
 
 			// Set message
-			$this->session->set_flashdata('post_updated', 'Your post has been updated');
+			$this->session->set_flashdata('message', 'Posing Anda telah diperbarui');
 
 			redirect('admin/artikel/');
 		}
-
-		public function delete($id_artikel){
-
 	
 		public function delete(){
 			$id_artikel=$this->input->post('id_artikel');
@@ -107,12 +104,10 @@ public function __construct()
 			$this->post_model->delete_artikel($id_artikel);
 
 			// Set message
-			$this->session->set_flashdata('post_deleted', 'Your post has been deleted');
+			$this->session->set_flashdata('message', 'Posting Anda telah dihapus');
 
 			redirect('admin/artikel/list');
 		}
-			echo $this->session->set_flashdata('msg','success-hapus');
-			redirect('admin/obat');
-			}
+		
 
 	}

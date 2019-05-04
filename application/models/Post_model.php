@@ -54,14 +54,14 @@
 			$slug = url_title($this->input->post('title'));
 
 			$data = array(
-				'title' => $this->input->post('title'),
+				'judul' => $this->input->post('judul'),
 				'slug' => $slug,
 				'body' => $this->input->post('body'),
-				'category_id' => $this->input->post('category_id')
+				'kategori' => $this->input->post('kategori')
 			);
 
-			$this->db->where('id', $this->input->post('id'));
-			return $this->db->update('posts', $data);
+			$this->db->where('id_artikel', $this->input->post('id_artikel'));
+			return $this->db->update('artikel', $data);
 		}
 
 		public function get_categories(){

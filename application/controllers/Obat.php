@@ -39,7 +39,7 @@
 			} else {}
 				// Set message
 				$this->obat_model->simpan_obat();
-				$this->session->set_flashdata('obat_created', 'Your akun has been created');
+				$this->session->set_flashdata('obat_created', 'Anda berhasil menginput data');
 				redirect('admin/obat');
 		}
 
@@ -67,7 +67,7 @@
 
             $this->obat_model->editobat_proses($data, $this->input->post('id_obat')); //passing variable $data ke info_model
 
-            $this->session->set_flashdata('message', 'edit');
+			$this->session->set_flashdata('message', 'anda berhasil memperbarui data');
             redirect('admin/obat'); //redirect page ke halaman info controller info_admin
         }
 
@@ -76,7 +76,7 @@
 			$data=$this->obat_model->get_id_obat($id_obat);
 			$q=$data->row_array();
 			$this->obat_model->delete_obat($id_obat);
-			echo $this->session->set_flashdata('msg','success-hapus');
+			echo $this->session->set_flashdata('message','Data berhasil dihapus');
 			redirect('admin/obat');
 			}
 
