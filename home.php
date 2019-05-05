@@ -11,10 +11,11 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/artikel.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/styles/responsive.css">
 </head>
 <body>
+
 <div class="super_container">
 
 	<!-- Navbar -->
@@ -27,12 +28,11 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
-				<li class="menu_item"><a href="<?php echo site_url('Welcome'); ?>">Home</a></li>
-				<li class="menu_item"><a href="<?php echo site_url('Artikel'); ?>">Artikel</a></li>
-				<li class="menu_item"><a href="<?php echo site_url('Welcome/obat'); ?>">Obat</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('Home'); ?>">Home</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('artikel'); ?>">Artikel</a></li>
+				<li class="menu_item"><a href="<?php echo site_url('obat'); ?>">Obat</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('keluhan'); ?>">Keluhan</a></li>
 				<li class="menu_item"><a href="<?php echo site_url('faq'); ?>">FAQ</a></li>
-
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -50,8 +50,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" style="background-image:url(<?php echo base_url();?>/assets/images/obat-1.png)"></div>
-		
+		<div class="background_image" style="background-image:url(<?php echo base_url();?>/assets/images/index_itera.png)"></div>
 
 		<!-- Header -->
 
@@ -89,7 +88,7 @@
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
 												<form action="#" id="search_container_form" class="search_container_form">
-													<input type="text" class="search_container_input" placeholder="Search" required="required">
+													<input type="text" class="search_container_input" placeholder="cari obat" required="required">
 													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 												</form>
 											</div>
@@ -108,7 +107,8 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Artikel</div>
+							<div class="home_title">Institut Teknologi Sumatera</div>
+							<div class="home_text">Pusat Informasi Obat ITERA.</div>
 						</div>
 					</div>
 				</div>
@@ -116,15 +116,14 @@
 		</div>
 	</div>
 
-	<!-- Artikel / News -->
+	<!-- Info Boxes -->
 
-	<div class="news">
+	<div class="info">
 		<div class="container">
-			<div class="row"> 
-				<!-- News Posts -->
-				<div class="col-lg-8">
-					<div class="news_posts">
-						 <?php foreach ($konten->result_array() as $br) :
+			<div class="row row-eq-height">
+
+				<?php $i=0 ?>
+				<?php foreach ($konten->result_array() as $br) :
           					   //$id_admin=$br['id_admin'];
           					   $judul=$br['judul'];
           					   $gambar=$br['gambar'];
@@ -133,25 +132,130 @@
           					   $id_artikel=$br['id_artikel'];
           					   $kategori=$br['kategori'];
            					   $create_at=$br['create_at'];
-							?>
-
-						<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div>
-							
-							<div class="news_post_content">
-								<div class="news_post_date"><a href="#"><td><?php echo $create_at ?></td></a></div>
-								<div class="news_post_title"><a href="#"><td><?php echo $judul; ?></td></a></div>
-								<div class="news_post_text"><p><td><?php echo word_limiter($body,20); ?></td></p></div>
-							</div>
-								<div class="button news_post_button"><a href="<?php echo site_url('detail_artikel/read/'.$id_artikel); ?>/<?php echo $slug;?>"><span>baca selengkapnya</span><span>baca selengkapnya</span></a></div>
+                    ?>
+				<!-- Info Box -->
+				<div class="col-lg-4 info_box_col">
+					<div class="info_box">
+						<div class="info_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div>
+						<div class="info_content">
+							<div class="info_title"><?php echo $judul; ?></div>
+							<div class="info_text"><?php echo word_limiter($body,10); ?></div>
+							<div class="button info_button"><a href="<?php echo site_url('detail_artikel/read/'.$id_artikel); ?>"><span>read more</span><span>read more</span></a></div>
 						</div>
-					<?php endforeach;?>	
-					</div>	
-				</div> 
-			</div> 
-		</div>						
+					</div>
+				</div>
+						<?php if (++$i == 3) break; ?>
+						<?php endforeach; ?>
+			</div>
+		</div>
 	</div>
 
+	<!-- CTA -->
+
+	<div class="cta">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="<?php echo base_url();?>/assets/images/cta_1.jpg" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="cta_container d-flex flex-xl-row flex-column align-items-xl-start align-items-center justify-content-xl-start justify-content-center">
+						<div class="cta_content text-xl-left text-center">
+							<div class="cta_title">Kenali gejala sakit anda di sini.</div>
+							<div class="cta_subtitle">priksakan gejala-gejala penyakit anda.</div>
+						</div>
+						<div class="button cta_button ml-xl-auto"><a href="<?php echo site_url('keluhan'); ?>"><span>Keluhan</span><span>call now</span></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- FAQ & News -->
+
+	<div class="stuff">
+		<div class="container">
+			<div class="row">
+
+				<!-- FAQ -->
+				<div class="col-lg-7">
+					<div class="faq">
+						<div class="faq_title">FAQ</div>
+						<div class="elements_accordions">
+							<div class="accordions">
+
+								<div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center deactive"><div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
+									<div class="accordion_panel">
+										<div>
+											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center deactive"><div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
+									<div class="accordion_panel">
+										<div>
+											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
+										</div>
+									</div>
+								</div>
+								
+								<div class="accordion_container">
+									<div class="accordion d-flex flex-row align-items-center deactive"><div>Bagaimana cara mendapatkan infromasi suatu penyakit ?</div></div>
+									<div class="accordion_panel">
+										<div>
+											<p>ketika anda membuka website ini, anda akan masuk pada halaman home dan dihalama home anda bisa masuk ke halaman keluhan dan disana akan ada pertanyaan mengenai keluhan sakit , setelah anda menjawab pertanyaan-pertanyaan tersebut maka anda akan mengetahui sakit yang anda derita. </p>
+										</div>
+									</div>
+								</div>								
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Latest News -->
+				<div class="col-lg-5">
+					<div class="news">
+						<div class="news_title">Latest News</div>
+						<div class="news_container">
+						
+									<?php $i=0 ?>
+									<?php foreach ($konten->result_array() as $br) :
+												   //$id_admin=$br['id_admin'];
+												   $judul=$br['judul'];
+												   $gambar=$br['gambar'];
+												   $body=$br['body'];
+												   $slug=$br['slug'];
+												   $id_artikel=$br['id_artikel'];
+												   $kategori=$br['kategori'];
+												   $create_at=$br['create_at'];
+										?>						
+
+							<!-- Latest News Post -->
+							<div class="latest d-flex flex-row align-items-start justify-content-start">
+								<div><div class="latest_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div></div>
+								<div class="latest_content">
+									<div class="latest_title"><a href="<?php echo site_url('detail_artikel/read/'.$id_artikel); ?>"><?php echo $judul; ?></a></div>
+									<div class="latest_info">
+										<ul class="d-flex flex-row align-items-start justify-content-start">
+											<li><a><?php echo $create_at; ?></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+									<?php if (++$i == 3) break; ?>
+									<?php endforeach; ?>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
 
 	<!-- Footer -->
 
