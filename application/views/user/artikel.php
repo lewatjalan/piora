@@ -136,7 +136,7 @@
 							?>
 
 						<div class="news_post">
-							<div class="news_post_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div>
+							<div class="news_post_image"><img height="220px" width="360px" src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div>
 							
 							<div class="news_post_content">
 								<div class="news_post_date"><a href="#"><td><?php echo $create_at ?></td></a></div>

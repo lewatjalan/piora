@@ -136,7 +136,7 @@
 				<!-- Info Box --> 
 				<div class="col-lg-4 info_box_col"> 
 					<div class="info_box"> 
-						<div class="info_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div> 
+						<div class="info_image"><img height="132px" width="360px" src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div> 
 						<div class="info_content"> 
 							<div class="info_title"><?php echo $judul; ?></div> 
 							<div class="info_text"><?php echo word_limiter($body,10); ?></div> 
