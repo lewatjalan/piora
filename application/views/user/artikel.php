@@ -121,10 +121,7 @@
 	<div class="news">
 		<div class="container">
 			<div class="row"> 
-
-				
 				<!-- News Posts -->
-
 				<div class="col-lg-8">
 					<div class="news_posts">
 						 <?php foreach ($konten->result_array() as $br) :
@@ -136,44 +133,25 @@
           					   $id_artikel=$br['id_artikel'];
           					   $kategori=$br['kategori'];
            					   $create_at=$br['create_at'];
-                    ?>
+							?>
 
-                    <div class="news_post">
+						<div class="news_post">
 							<div class="news_post_image"><img src="<?php echo base_url().'assets/images/posts/'.$gambar;?>" alt=""></div>
 							
 							<div class="news_post_content">
 								<div class="news_post_date"><a href="#"><td><?php echo $create_at ?></td></a></div>
 								<div class="news_post_title"><a href="#"><td><?php echo $judul; ?></td></a></div>
-								<div class="news_post_info">
-								</div>
-								<div class="news_post_text">
-									<p><td><?php echo word_limiter($body,20); ?></td></p>
-								</div>
-							
-								</div>
+								<div class="news_post_text"><p><td><?php echo word_limiter($body,20); ?></td></p></div>
+							</div>
 								<div class="button news_post_button"><a href="<?php echo site_url('detail_artikel/read/'.$id_artikel); ?>/<?php echo $slug;?>"><span>baca selengkapnya</span><span>baca selengkapnya</span></a></div>
-							</div>
 						</div>
-               
-				<?php endforeach;?>
-
-				
-						
-								
-
-								
-
-								
-								</div>
-
-							</div>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
+					<?php endforeach;?>	
+					</div>	
+				</div> 
+			</div> 
+		</div>						
 	</div>
+
 
 	<!-- Footer -->
 
